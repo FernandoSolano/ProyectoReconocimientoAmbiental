@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\FuncionarioBusiness.cs" />
+    <Compile Include="Data\FuncionarioData.cs" />
     <Compile Include="Domain\Accion.cs" />
     <Compile Include="Domain\Actividad.cs" />
     <Compile Include="Domain\AreaTematica.cs" />
