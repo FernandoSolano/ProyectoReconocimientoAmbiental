@@ -40,6 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\FuncionarioBusiness.cs" />
+    <Compile Include="Data\FuncionarioData.cs" />
+    <Compile Include="Domain\Accion.cs" />
+    <Compile Include="Domain\Actividad.cs" />
+    <Compile Include="Domain\AreaTematica.cs" />
+    <Compile Include="Domain\Criterio.cs" />
+    <Compile Include="Domain\Documento.cs" />
+    <Compile Include="Domain\EncargadoEvaluacion.cs" />
+    <Compile Include="Domain\Evaluacion.cs" />
+    <Compile Include="Domain\Evidencia.cs" />
+    <Compile Include="Domain\Funcionario.cs" />
+    <Compile Include="Domain\Guia.cs" />
+    <Compile Include="Domain\Imagen.cs" />
+    <Compile Include="Domain\Normativa.cs" />
+    <Compile Include="Domain\Recinto.cs" />
+    <Compile Include="Domain\Rol.cs" />
+    <Compile Include="Domain\Subcriterio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
