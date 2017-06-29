@@ -15,6 +15,11 @@ namespace ReconocimientoAmbientalLibrary.Business
             this.subcriterioData = new SubcriterioData(cadenaConexion);
         }//constructor
 
+        public void AgregarSubcriterio(String nombreSubcriterio, String responsableSubcriterio, String planSubcriterio, int idCriterio)
+        {
+            this.subcriterioData.AgregarSubcriterio(nombreSubcriterio,responsableSubcriterio,planSubcriterio,idCriterio);
+        }//AgregarSubcriterio
+
     }//SubcriterioBusiness
 
 }//namespace

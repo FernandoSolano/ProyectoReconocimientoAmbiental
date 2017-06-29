@@ -15,6 +15,11 @@ namespace ReconocimientoAmbientalLibrary.Business
             this.guiaData = new GuiaData(cadenaConexion);
         }//constructor
 
+        public void IngresarGuiaAmbiental(int annoPublicacion, DateTime fechaCreacion, String nombreGuia)
+        {
+            this.guiaData.IngresarGuiaAmbiental(annoPublicacion, fechaCreacion, nombreGuia);
+        }//IngresarGuiaAmbiental
+
     }//GuiaBusiness
 
 }//namespace

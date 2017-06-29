@@ -15,5 +15,10 @@ namespace ReconocimientoAmbientalLibrary.Business
             this.areaTematicaData = new AreaTematicaData(cadenaConexion);
         }//constructor
 
+        public void AgregarAreaTematica(String nombreAreaTematica, String descripcionArea, String siglaArea, int idGuia)
+        {
+            this.areaTematicaData.AgregarAreaTematica(nombreAreaTematica,descripcionArea,siglaArea,idGuia);
+        }//AgregarAreaTematica
+
     }//AreaTematicaBusiness
 }//namespace
