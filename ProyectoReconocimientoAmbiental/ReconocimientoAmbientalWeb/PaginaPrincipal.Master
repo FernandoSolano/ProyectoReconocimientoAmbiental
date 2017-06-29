@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipal.master.cs" Inherits="ReconocimientoAmbientalWeb.PaginaPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+            <asp:Menu ID="Menu1" runat="server" StaticSubMenuIndent="16px">
+                <Items>
+                    <asp:MenuItem Text="Responsables Área Temática" Value="Responsables Área Temática">
+                        <asp:MenuItem Text="Asignar responsable" Value="Asignar responsable"></asp:MenuItem>
+                        <asp:MenuItem Text="Cambiar responsable de area" Value="Cambiar responsable de area"></asp:MenuItem>
+                        <asp:MenuItem Text="Descargar reporte por área" Value="Descargar reporte por área"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+            <br />
+            <br />
+            <br />
+        
+        </asp:ContentPlaceHolder>
+    </div>
+        <div style="height: 356px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
