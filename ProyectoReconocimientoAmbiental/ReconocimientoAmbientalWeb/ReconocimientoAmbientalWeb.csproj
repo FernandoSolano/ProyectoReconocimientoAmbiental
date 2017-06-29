@@ -413,6 +413,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ReconocimientoAmbientalLibrary\ReconocimientoAmbientalLibrary.csproj">
+      <Project>{0022D627-B1DD-491F-B876-4F7F27328E85}</Project>
+      <Name>ReconocimientoAmbientalLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
