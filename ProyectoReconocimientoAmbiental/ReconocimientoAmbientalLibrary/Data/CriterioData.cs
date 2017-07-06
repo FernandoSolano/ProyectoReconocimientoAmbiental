@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReconocimientoAmbientalLibrary.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -43,7 +44,31 @@ namespace ReconocimientoAmbientalLibrary.Data
                 transaccion.Rollback();//si se ejecuto mal que no haga ningun cambio en la base de datos
             }//catch
             sqlConnection1.Close();
-        }
+        }//AgregarCriterio
+
+
+        public LinkedList<Criterio> ObtenerCriterios()
+        {
+
+            //paso 1
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("sp_obtener_criterios", connection);
+            connection.Open();
+            SqlDataReader drCriterios = cmd.ExecuteReader();
+            LinkedList<Criterio> criterios = new LinkedList<Criterio>();
+            while (drCriterios.Read())
+            {
+
+                Criterio criterio = new Criterio();
+                criterio.NombreCriterio = drCriterios["nombreCriterio"].ToString();
+                criterio.IdCriterio =Int32.Parse (drCriterios["idCriterio"].ToString());
+
+                criterios.AddLast(criterio);
+            }//while
+            connection.Close();
+            return criterios;
+
+        }//ObtenerCriterios()
 
     }//CriterioData
 

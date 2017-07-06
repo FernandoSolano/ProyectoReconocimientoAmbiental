@@ -45,7 +45,6 @@ namespace ReconocimientoAmbientalLibrary.Data
             }//catch
             sqlConnection1.Close();
         }
-    }//class
 
 
 }//GuiaData

@@ -1,4 +1,5 @@
 ﻿using ReconocimientoAmbientalLibrary.Data;
+using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace ReconocimientoAmbientalLibrary.Business
         {
             this.subcriterioData.AgregarSubcriterio(nombreSubcriterio,responsableSubcriterio,planSubcriterio,idCriterio);
         }//AgregarSubcriterio
+
+        public LinkedList<Subcriterio> ObtenerSubcriterios()
+        {
+            return this.subcriterioData.ObtenerSubcriterios();
+        }//ObtenerCriterios
 
     }//SubcriterioBusiness
 

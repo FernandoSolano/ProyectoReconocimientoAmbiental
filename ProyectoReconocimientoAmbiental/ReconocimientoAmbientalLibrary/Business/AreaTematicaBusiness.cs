@@ -1,4 +1,5 @@
 ﻿using ReconocimientoAmbientalLibrary.Data;
+using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,15 @@ namespace ReconocimientoAmbientalLibrary.Business
             this.areaTematicaData = new AreaTematicaData(cadenaConexion);
         }//constructor
 
-        public void AgregarAreaTematica(String nombreAreaTematica, String descripcionArea, String siglaArea, int idGuia)
+        public void AgregarAreaTematica(String nombreAreaTematica, String descripcionArea, String siglaArea)
         {
-            this.areaTematicaData.AgregarAreaTematica(nombreAreaTematica,descripcionArea,siglaArea,idGuia);
+            this.areaTematicaData.AgregarAreaTematica(nombreAreaTematica,descripcionArea,siglaArea);
         }//AgregarAreaTematica
+
+        public LinkedList<AreaTematica> ObtenerAreasTematicas()
+        {
+            return this.areaTematicaData.ObtenerAreasTematicas();
+        }//ObtenerAreasTematicas
 
     }//AreaTematicaBusiness
 }//namespace
