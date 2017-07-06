@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipal.master.cs" Inherits="ReconocimientoAmbientalWeb.PaginaPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1 {
+            height: 557px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 208px; height: 130px; position: relative; top: 161px; left: 3px;">
+        <asp:Menu ID="Menu1" runat="server" OnMenuItemClick="Menu1_MenuItemClick" StaticSubMenuIndent="16px">
+            <Items>
+                <asp:MenuItem Text="Responsables Área Temática" Value="Responsables Área Temática">
+                    <asp:MenuItem Text="Cambiar responsable de area" Value="Cambiar responsable de area"></asp:MenuItem>
+                    <asp:MenuItem Text="Descargar reporte por área" Value="Descargar reporte por área"></asp:MenuItem>
+                    <asp:MenuItem Text="Asignar responsable" Value="Asignar responsable"></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <br />
+        <div style="width: 93px; position: relative; left: 4px; bottom: -60px;">
+            <asp:Menu ID="Menu2" runat="server">
+                <Items>
+                    <asp:MenuItem Text="Usuarios" Value="Usuarios">
+                        <asp:MenuItem Text="Registrar usuario" Value="Registrar usuario"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <div style="width: 118px; left: 5px; position: relative; bottom: -112px; height: 38px;">
+            <asp:Menu ID="Menu3" runat="server">
+                <Items>
+                    <asp:MenuItem Text="Guia Ambiental" Value="Guia Ambiental">
+                        <asp:MenuItem Text="Ingresar Guía Ambiental" Value="Ingresar Guía Ambiental"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar Area Tematica" Value="Agregar Area Tematica"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar criterio" Value="Agregar criterio"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar subcriterio" Value="Agregar subcriterio"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <br />
+    </div>
+        <div style="height: 356px; width: 665px; position: relative; top: 21px; left: 253px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="position: relative; top: -482px; left: 2px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#000099" Text="Galardón Ambiental"></asp:Label>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:HyperLink ID="HyperLink1" runat="server">Iniciar Sesión</asp:HyperLink>
+        </div>
+        <div style="background-image: url('/Imagenes/ucr.jpg'); position: relative; top: -586px; left: -2px; width: 345px; height: 137px;">
+        </div>
+    </form>
+</body>
+</html>
