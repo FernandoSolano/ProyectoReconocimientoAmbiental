@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReconocimientoAmbientalLibrary.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -46,6 +47,37 @@ namespace ReconocimientoAmbientalLibrary.Data
             return 0;
 
         }//iniciarSesion()
+
+        public Funcionario registrarFuncionario(Funcionario funcionario)
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand sqlCommand = new SqlCommand("sp_insertar_funcionario", connection);
+            sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCommand.Parameters.Add(new SqlParameter("@nombreFuncionario", funcionario.NombreFuncionario));
+            sqlCommand.Parameters.Add(new SqlParameter("@username", funcionario.UserName));
+            sqlCommand.Parameters.Add(new SqlParameter("@password", funcionario.Password));
+            sqlCommand.Parameters.Add(new SqlParameter("@telefonoFuncionario", funcionario.TelefonoFuncionario));
+            sqlCommand.Parameters.Add(new SqlParameter("@emailFuncionario", funcionario.EmailFuncionario));
+            sqlCommand.Parameters.Add(new SqlParameter("@idRol", funcionario.Rol.IdRol));
+            SqlParameter idFuncionarioParameter = new SqlParameter("@idFuncionario", System.Data.SqlDbType.Int);
+            idFuncionarioParameter.Direction = System.Data.ParameterDirection.Output;
+            sqlCommand.Parameters.Add(idFuncionarioParameter);
+            try
+            {
+                connection.Open();
+                sqlCommand.ExecuteNonQuery();
+                funcionario.IdFuncionario = Int32.Parse(sqlCommand.Parameters["@idFuncionario"].Value.ToString());
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            if (connection != null)
+            {
+                connection.Close();
+            }
+            return funcionario;
+        }
 
 
     }//FuncionarioData

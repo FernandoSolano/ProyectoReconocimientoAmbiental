@@ -11,7 +11,6 @@ namespace ReconocimientoAmbientalLibrary.Domain
         private int idSubcriterio;
         private String descripcionSubcriterio;
         private String nombreSubcriterio;
-        private LinkedList<Evidencia> evidencias;
 
         public Subcriterio()
         {
@@ -54,19 +53,6 @@ namespace ReconocimientoAmbientalLibrary.Domain
             set
             {
                 nombreSubcriterio = value;
-            }
-        }
-
-        public LinkedList<Evidencia> Evidencias
-        {
-            get
-            {
-                return evidencias;
-            }
-
-            set
-            {
-                evidencias = value;
             }
         }
     }//Subcriterio

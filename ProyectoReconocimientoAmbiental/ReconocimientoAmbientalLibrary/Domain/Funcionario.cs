@@ -18,7 +18,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
 
         public Funcionario()
         {
-
+            this.rol = new Rol();
         }//constructor
 
         public int IdFuncionario
