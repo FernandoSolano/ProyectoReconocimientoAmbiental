@@ -1,4 +1,5 @@
 ﻿using ReconocimientoAmbientalLibrary.Data;
+using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -21,6 +22,11 @@ namespace ReconocimientoAmbientalLibrary.Business
         {
             return this.funcionarioData.iniciarSesion(usuario,contrasena);
         }//iniciarSesion
+
+        public Funcionario registrarFuncionario(Funcionario funcionario)
+        {
+            return funcionarioData.registrarFuncionario(funcionario);
+        }
 
     }//FuncionarioBusiness
 

@@ -10,7 +10,6 @@ namespace ReconocimientoAmbientalLibrary.Domain
     {
         private int idEncargado;
         private String nombreEncargado;
-        private Evaluacion evaluacion;
         private AreaTematica areaTematica;
         private Funcionario funcionario;
 
@@ -42,19 +41,6 @@ namespace ReconocimientoAmbientalLibrary.Domain
             set
             {
                 nombreEncargado = value;
-            }
-        }
-
-        public Evaluacion Evaluacion
-        {
-            get
-            {
-                return evaluacion;
-            }
-
-            set
-            {
-                evaluacion = value;
             }
         }
 

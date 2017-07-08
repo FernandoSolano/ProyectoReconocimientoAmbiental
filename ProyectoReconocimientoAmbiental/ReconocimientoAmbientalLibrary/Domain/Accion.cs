@@ -10,7 +10,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
     {
         private int idAccion;
         private String detalleAccion;
-        private String informeTecnico;
+        private String urlInformeTecnico;
 
         public Accion()
         {
@@ -43,16 +43,16 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public string InformeTecnico
+        public string UrlInformeTecnico
         {
             get
             {
-                return informeTecnico;
+                return urlInformeTecnico;
             }
 
             set
             {
-                informeTecnico = value;
+                urlInformeTecnico = value;
             }
         }
     }//Accion
