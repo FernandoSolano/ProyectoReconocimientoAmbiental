@@ -13,7 +13,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
         private Boolean vigente;
         private DateTime fechaCreacion;
         private String nombreGuia;
-        LinkedList<AreaTematica> AreasTematicas;
+        LinkedList<AreaTematica> areas;
 
         public Guia()
         {
@@ -85,16 +85,16 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public LinkedList<AreaTematica> AreasTematicas1
+        public LinkedList<AreaTematica> Areas
         {
             get
             {
-                return AreasTematicas;
+                return areas;
             }
 
             set
             {
-                AreasTematicas = value;
+                areas = value;
             }
         }
 

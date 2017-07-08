@@ -14,6 +14,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
         private LinkedList<Evidencia> evidencias;
         private Recinto recinto;
         private Guia guia;
+        private LinkedList<EncargadoEvaluacion> evaluadores;
 
         public Evaluacion()
         {
@@ -95,6 +96,19 @@ namespace ReconocimientoAmbientalLibrary.Domain
             set
             {
                 guia = value;
+            }
+        }
+
+        public LinkedList<EncargadoEvaluacion> Evaluadores
+        {
+            get
+            {
+                return evaluadores;
+            }
+
+            set
+            {
+                evaluadores = value;
             }
         }
     }//Evaluacion
