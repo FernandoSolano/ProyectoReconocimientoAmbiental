@@ -43,35 +43,50 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
         }
 
-        public void obtenerRecinto()
+        public Recinto obtenerRecinto()
         {
-            String queryString = "SELECT ";
+            String queryString = "SELECT TOP(1) * FROM Recinto";
             SqlConnection connection = new SqlConnection(this.connectionString);
             DataSet dataSetRecinto = new DataSet();
             SqlDataAdapter dataAdapterRecinto = new SqlDataAdapter();
             dataAdapterRecinto.SelectCommand = new SqlCommand(queryString, connection);
             dataAdapterRecinto.Fill(dataSetRecinto, "Recinto");
 
-            DataRowCollection rows = dataSetRecinto.Tables["Producto"].Rows;
-            LinkedList<Producto> productos = new LinkedList<Producto>();
+            DataRowCollection rows = dataSetRecinto.Tables["Recinto"].Rows;
+
+            Recinto recinto = new Recinto();
             foreach (DataRow row in rows)
             {
-                FamiliaDeProducto familia = new FamiliaDeProducto(Int32.Parse(row["cod_familia"].ToString()), row["nombre_familia"].ToString());
-                UnidadMedida unidad = new UnidadMedida(Int32.Parse(row["cod_unidad_medida"].ToString()), row["nombre_unidad"].ToString());
-                productos.AddLast(
-                    new Producto(
-                        Int32.Parse(row["cod_producto"].ToString()),
-                        Int32.Parse(row["cantidad_existencia"].ToString()),
-                        row["nombre_producto"].ToString(),
-                        float.Parse(row["precio"].ToString()),
-                        bool.Parse(row["impuesto"].ToString()),
-                        familia,
-                        unidad
-                    )
-                );
-
+                recinto.IdRecinto = Int32.Parse(row["idRecinto"].ToString());
+                recinto.NombreRecinto = row["nombreRecinto"].ToString();
+                recinto.TelefonoRecinto = row["telefonoRecinto"].ToString();
+                recinto.CorreoEectronicoRecinto = row["correoElectronicoRecinto"].ToString();
+                recinto.DireccionRecinto = row["direccionRecinto"].ToString();
             }
-            return productos;
+            return recinto;
+        }
+
+        public Recinto obtenerRecintoPorCodigo(int codigo)
+        {
+            String queryString = "SELECT TOP(1) * FROM Recinto WHERE idRecinto="+codigo;
+            SqlConnection connection = new SqlConnection(this.connectionString);
+            DataSet dataSetRecinto = new DataSet();
+            SqlDataAdapter dataAdapterRecinto = new SqlDataAdapter();
+            dataAdapterRecinto.SelectCommand = new SqlCommand(queryString, connection);
+            dataAdapterRecinto.Fill(dataSetRecinto, "Recinto");
+
+            DataRowCollection rows = dataSetRecinto.Tables["Recinto"].Rows;
+
+            Recinto recinto = new Recinto();
+            foreach (DataRow row in rows)
+            {
+                recinto.IdRecinto = Int32.Parse(row["idRecinto"].ToString());
+                recinto.NombreRecinto = row["nombreRecinto"].ToString();
+                recinto.TelefonoRecinto = row["telefonoRecinto"].ToString();
+                recinto.CorreoEectronicoRecinto = row["correoElectronicoRecinto"].ToString();
+                recinto.DireccionRecinto = row["direccionRecinto"].ToString();
+            }
+            return recinto;
         }
     }
 }

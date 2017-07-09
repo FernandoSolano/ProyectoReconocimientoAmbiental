@@ -21,5 +21,15 @@ namespace ReconocimientoAmbientalLibrary.Business
         {
             recintoData.actualizarRecinto(recinto);
         }
+
+        public Recinto obtenerRecinto()
+        {
+            return recintoData.obtenerRecinto();
+        }
+
+        public Recinto obtenerRecintoPorCodigo(int codigo)
+        {
+            return recintoData.obtenerRecintoPorCodigo(codigo);
+        }
     }
 }
