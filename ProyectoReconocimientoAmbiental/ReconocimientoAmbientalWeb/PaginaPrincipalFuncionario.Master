@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipalFuncionario.master.cs" Inherits="ReconocimientoAmbientalWeb.PaginaPrincipalFuncionario" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1 {
+            height: 557px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 208px; height: 130px; position: relative; top: 161px; left: 3px;">
+        <asp:Menu ID="MenuEvidencia" runat="server" StaticSubMenuIndent="16px" ForeColor="#0033CC">
+            <Items>
+                <asp:MenuItem Text="Evidencias" Value="Evidencias">
+                    <asp:MenuItem Text="Visualizar evidencias" Value="Visualizar evidencias"></asp:MenuItem>
+                    <asp:MenuItem Text="Ingresar una evidencia" Value="Ingresar una evidencia"></asp:MenuItem>
+                    <asp:MenuItem Text="Registrar evidencia para subcriterio" Value="Descargar reporte por área"></asp:MenuItem>
+                    <asp:MenuItem Text="Descargar adjuntos evidencia" Value="Descargar adjuntos evidencia"></asp:MenuItem>
+                    <asp:MenuItem Text="Ver evidencias por subcriterio" Value="Ver evidencias por subcriterio"></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <br />
+        <div style="width: 93px; position: relative; left: 4px; bottom: -84px;">
+            <asp:Menu ID="MenuAreaTematica" runat="server" ForeColor="#0033CC">
+                <Items>
+                    <asp:MenuItem Text="Área temática" Value="Área temática">
+                        <asp:MenuItem Text="Visualizar criterios y subcriterios del área" Value="Registrar usuario"></asp:MenuItem>
+                        <asp:MenuItem Text="Generar reporte de área temática" Value="Generar reporte de área temática"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <div style="width: 118px; left: 5px; position: relative; bottom: -112px; height: 38px;">
+            <asp:Menu ID="MenuCriterio" runat="server" ForeColor="#0033CC">
+                <Items>
+                    <asp:MenuItem Text="Criterios" Value="Criterios">
+                        <asp:MenuItem Text="Ver informacion de criterios" Value="Ver informacion de criterios" NavigateUrl="~/GuiaAmbientalView.aspx"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <br />
+    </div>
+        <div style="height: 356px; width: 665px; position: relative; top: 21px; left: 253px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="position: relative; top: -482px; left: 2px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#000099" Text="Galardón Ambiental"></asp:Label>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBususesion" runat="server" ForeColor="#3366FF"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="LinkAbrirSesion" runat="server" NavigateUrl="~/Acceso.aspx" Font-Underline="False" ForeColor="#3366FF">Iniciar Sesión</asp:HyperLink>
+            <asp:LinkButton ID="LinkCerrarSesion" runat="server" Font-Underline="False" ForeColor="#3366FF" OnClick="LinkCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
+        </div>
+        <div style="background-image: url('/Imagenes/ucr.jpg'); position: relative; top: -586px; left: -2px; width: 345px; height: 137px;">
+        </div>
+        <div style="position: relative; top: -297px; left: 10px; width: 99px;">
+            <asp:Menu ID="MenuSubcriterio" runat="server" ForeColor="Blue">
+                <Items>
+                    <asp:MenuItem Text="Subcriterios" Value="Subcriterios">
+                        <asp:MenuItem Text="Ver información de los subcriterios" Value="Ver información de los subcriterios"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+    </form>
+</body>
+</html>
+

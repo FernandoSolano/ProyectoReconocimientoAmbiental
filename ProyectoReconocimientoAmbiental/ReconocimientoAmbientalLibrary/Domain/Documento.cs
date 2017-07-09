@@ -13,6 +13,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
         private String detalleDocumento;
         private String fuenteEmisor;
         private DateTime fechaEmision;
+        private String urlDocumento;
 
         public Documento()
         {
@@ -81,6 +82,19 @@ namespace ReconocimientoAmbientalLibrary.Domain
             set
             {
                 fechaEmision = value;
+            }
+        }
+
+        public string UrlDocumento
+        {
+            get
+            {
+                return urlDocumento;
+            }
+
+            set
+            {
+                urlDocumento = value;
             }
         }
     }//Documento

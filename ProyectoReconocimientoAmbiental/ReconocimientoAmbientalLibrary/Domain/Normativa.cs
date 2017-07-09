@@ -10,7 +10,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
     {
         private int idNormativa;
         private String detalleNormativa;
-        private String normativaa;
+        private String urlNormativa;
 
         public Normativa()
         {
@@ -43,16 +43,16 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public string Normativaa
+        public string UrlNormativa
         {
             get
             {
-                return normativaa;
+                return urlNormativa;
             }
 
             set
             {
-                normativaa = value;
+                urlNormativa = value;
             }
         }
     }//Normativa
