@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaPrincipal.master.cs" Inherits="ReconocimientoAmbientalWeb.PaginaPrincipal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        #form1 {
+            height: 557px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width: 208px; height: 130px; position: relative; top: 161px; left: 3px;">
+        <asp:Menu ID="MenuResponsableArea" runat="server" OnMenuItemClick="Menu1_MenuItemClick" StaticSubMenuIndent="16px" ForeColor="#0033CC">
+            <Items>
+                <asp:MenuItem Text="Responsables Área Temática" Value="Responsables Área Temática">
+                    <asp:MenuItem Text="Descargar reporte por área" Value="Descargar reporte por área"></asp:MenuItem>
+                    <asp:MenuItem Text="Asignar responsable" Value="Asignar responsable"></asp:MenuItem>
+                </asp:MenuItem>
+            </Items>
+        </asp:Menu>
+        <br />
+        <div style="width: 93px; position: relative; left: 4px; bottom: -60px;">
+            <asp:Menu ID="MenuUsuarios" runat="server" ForeColor="#0033CC">
+                <Items>
+                    <asp:MenuItem Text="Usuarios" Value="Usuarios">
+                        <asp:MenuItem Text="Registrar funcionario" Value="Registrar funcionario"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <div style="width: 118px; left: 5px; position: relative; bottom: -112px; height: 38px;">
+            <asp:Menu ID="MenuGuiaAmbiental" runat="server" OnMenuItemClick="Menu3_MenuItemClick" ForeColor="#0033CC">
+                <Items>
+                    <asp:MenuItem Text="Guia Ambiental" Value="Guia Ambiental">
+                        <asp:MenuItem Text="Ingresar Guía Ambiental" Value="Ingresar Guía Ambiental" NavigateUrl="~/GuiaAmbientalView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar Area Tematica" Value="Agregar Area Tematica" NavigateUrl="~/AreaTematicaView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar criterio" Value="Agregar criterio" NavigateUrl="~/CriterioView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar subcriterio" Value="Agregar subcriterio" NavigateUrl="~/SubcriterioView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Visualizar subcriterios" Value="Visualizar subcriterios"></asp:MenuItem>
+                        <asp:MenuItem Text="Generar reporte de guía" Value="Generar reporte de guía"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <br />
+        <br />
+    </div>
+        <div style="height: 356px; width: 665px; position: relative; top: 21px; left: 253px;">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderBody" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="position: relative; top: -482px; left: 2px;">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Size="XX-Large" ForeColor="#000099" Text="Galardón Ambiental"></asp:Label>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBususesion" runat="server" ForeColor="#3366FF"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="LinkAbrirSesion" runat="server" NavigateUrl="~/Acceso.aspx" Font-Underline="False" ForeColor="#3366FF">Iniciar Sesión</asp:HyperLink>
+            <asp:LinkButton ID="LinkCerrarSesion" runat="server" Font-Underline="False" ForeColor="#3366FF" OnClick="LinkCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
+        </div>
+        <div style="background-image: url('/Imagenes/ucr.jpg'); position: relative; top: -586px; left: -2px; width: 345px; height: 137px;">
+        </div>
+        <div style="position: relative; top: -286px; left: 10px; width: 87px;">
+            <asp:Menu ID="MenuRecinto" runat="server" ForeColor="Blue">
+                <Items>
+                    <asp:MenuItem Text="Recinto" Value="Recinto"></asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+        <div style="position: relative; top: -249px; left: 10px; width: 103px;">
+            <asp:Menu ID="MenuEvaluacion" runat="server" ForeColor="Blue">
+                <Items>
+                    <asp:MenuItem Text="Evaluación" Value="Evaluación">
+                        <asp:MenuItem Text="Descargar reporte evaluación" Value="Descargar reporte evaluación"></asp:MenuItem>
+                    </asp:MenuItem>
+                </Items>
+            </asp:Menu>
+        </div>
+    </form>
+</body>
+</html>

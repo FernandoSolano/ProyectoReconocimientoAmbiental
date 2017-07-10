@@ -40,7 +40,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\AreaTematicaBusiness.cs" />
+    <Compile Include="Business\CriterioBusiness.cs" />
+    <Compile Include="Business\EncargadoEvaluacionBusiness.cs" />
+    <Compile Include="Business\FuncionarioBusiness.cs" />
+    <Compile Include="Business\GuiaBusiness.cs" />
+    <Compile Include="Business\RecintoBusiness.cs" />
+    <Compile Include="Business\SubcriterioBusiness.cs" />
+    <Compile Include="Data\AreaTematicaData.cs" />
+    <Compile Include="Data\CriterioData.cs" />
+    <Compile Include="Data\EncargadoEvaluacionData.cs" />
+    <Compile Include="Data\FuncionarioData.cs" />
+    <Compile Include="Data\GuiaData.cs" />
+    <Compile Include="Data\RecintoData.cs" />
+    <Compile Include="Data\SubcriterioData.cs" />
+    <Compile Include="Domain\Accion.cs" />
+    <Compile Include="Domain\Actividad.cs" />
+    <Compile Include="Domain\AreaTematica.cs" />
+    <Compile Include="Domain\Criterio.cs" />
+    <Compile Include="Domain\Documento.cs" />
+    <Compile Include="Domain\EncargadoEvaluacion.cs" />
+    <Compile Include="Domain\Evaluacion.cs" />
+    <Compile Include="Domain\Evidencia.cs" />
+    <Compile Include="Domain\Funcionario.cs" />
+    <Compile Include="Domain\Guia.cs" />
+    <Compile Include="Domain\Imagen.cs" />
+    <Compile Include="Domain\Normativa.cs" />
+    <Compile Include="Domain\Recinto.cs" />
+    <Compile Include="Domain\Rol.cs" />
+    <Compile Include="Domain\Subcriterio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\GuiaAmbientalReport.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\ReconocimientoAmbientalLibrary.Domain.AreaTematica.datasource" />
+    <None Include="Properties\DataSources\ReconocimientoAmbientalLibrary.Domain.Criterio.datasource" />
+    <None Include="Properties\DataSources\ReconocimientoAmbientalLibrary.Domain.Guia.datasource" />
+    <None Include="Properties\DataSources\ReconocimientoAmbientalLibrary.Domain.Subcriterio.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
