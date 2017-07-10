@@ -48,7 +48,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.Common.10.0.40219.1\lib\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportViewer.WebForms.10.0.40219.1\lib\Microsoft.ReportViewer.WebForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -187,6 +202,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="GuiaAmbientalView.aspx" />
+    <Content Include="nuevaAccion.aspx" />
+    <Content Include="nuevaEvidenciaMenu.aspx" />
+    <Content Include="NuevaNormativa.aspx" />
+    <Content Include="NuevoDocumento.aspx" />
     <Content Include="PaginaPrincipal.Master" />
     <Content Include="PaginaPrincipalFuncionario.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -226,6 +245,9 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="SubcriterioView.aspx" />
+    <Content Include="verAcciones.aspx" />
+    <Content Include="VerDocumentos.aspx" />
+    <Content Include="verNormativas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VisualizarIinformacionSubcriterios.aspx" />
     <Content Include="VisualizarInformacionCriterios.aspx" />
@@ -381,6 +403,7 @@
     </Compile>
     <Compile Include="AreaTematicaView.aspx.designer.cs">
       <DependentUpon>AreaTematicaView.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AsignarResponsable.aspx.cs">
       <DependentUpon>AsignarResponsable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -427,6 +450,34 @@
       <DependentUpon>GuiaAmbientalView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="nuevaAccion.aspx.cs">
+      <DependentUpon>nuevaAccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevaAccion.aspx.designer.cs">
+      <DependentUpon>nuevaAccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nuevaEvidenciaMenu.aspx.cs">
+      <DependentUpon>nuevaEvidenciaMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevaEvidenciaMenu.aspx.designer.cs">
+      <DependentUpon>nuevaEvidenciaMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaNormativa.aspx.cs">
+      <DependentUpon>NuevaNormativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaNormativa.aspx.designer.cs">
+      <DependentUpon>NuevaNormativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoDocumento.aspx.cs">
+      <DependentUpon>NuevoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoDocumento.aspx.designer.cs">
+      <DependentUpon>NuevoDocumento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaPrincipal.Master.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -477,6 +528,27 @@
     </Compile>
     <Compile Include="SubcriterioView.aspx.designer.cs">
       <DependentUpon>SubcriterioView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verAcciones.aspx.cs">
+      <DependentUpon>verAcciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verAcciones.aspx.designer.cs">
+      <DependentUpon>verAcciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerDocumentos.aspx.cs">
+      <DependentUpon>VerDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerDocumentos.aspx.designer.cs">
+      <DependentUpon>VerDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verNormativas.aspx.cs">
+      <DependentUpon>verNormativas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verNormativas.aspx.designer.cs">
+      <DependentUpon>verNormativas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
