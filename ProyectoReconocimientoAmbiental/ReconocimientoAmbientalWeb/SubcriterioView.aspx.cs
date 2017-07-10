@@ -33,7 +33,7 @@ namespace ReconocimientoAmbientalWeb
         protected void Button1_Click(object sender, EventArgs e)
         {
             SubcriterioBusiness subcriterioBusiness = new SubcriterioBusiness(WebConfigurationManager.ConnectionStrings["PRA_DFGKP"].ConnectionString);
-            subcriterioBusiness.AgregarSubcriterio(TX_nombreSubcriterio.Text,TX_responsable.Text,TX_planSubcriterio.Text,Int32.Parse(DDL_criterios.DataValueField));
+            subcriterioBusiness.AgregarSubcriterio(TX_nombreSubcriterio.Text,TX_descripcion.Text,Int32.Parse(DDL_criterios.DataValueField));
         }
     }
 }
