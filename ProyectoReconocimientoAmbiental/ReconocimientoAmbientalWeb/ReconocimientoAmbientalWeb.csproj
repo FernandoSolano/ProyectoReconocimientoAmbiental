@@ -224,6 +224,8 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="SubcriterioView.aspx" />
+    <Content Include="verCriterio.aspx" />
+    <Content Include="verSubcriterio.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VisualizarIinformacionSubcriterios.aspx" />
     <Content Include="VisualizarInformacionCriterios.aspx" />
@@ -469,6 +471,20 @@
     </Compile>
     <Compile Include="SubcriterioView.aspx.designer.cs">
       <DependentUpon>SubcriterioView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verCriterio.aspx.cs">
+      <DependentUpon>verCriterio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verCriterio.aspx.designer.cs">
+      <DependentUpon>verCriterio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verSubcriterio.aspx.cs">
+      <DependentUpon>verSubcriterio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verSubcriterio.aspx.designer.cs">
+      <DependentUpon>verSubcriterio.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
