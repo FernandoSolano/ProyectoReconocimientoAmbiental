@@ -17,7 +17,7 @@ namespace ReconocimientoAmbientalLibrary.Data
             this.cadenaConexion = cadenaConexion;
         }//constructor
 
-        public void AgregarSubcriterio(String nombreSubcriterio, String responsableSubcriterio, String planSubcriterio, int idCriterio)
+        public void AgregarSubcriterio(String nombreSubcriterio, String descripcionSubcriterio, int idCriterio)
         {
             SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
             sqlConnection1.Open();
@@ -30,8 +30,7 @@ namespace ReconocimientoAmbientalLibrary.Data
 
                 //***aqui va el parametro que quiero enviarle al procedimiento
                 cmd.Parameters.AddWithValue("@nombreSubcriterio", nombreSubcriterio);
-                cmd.Parameters.AddWithValue("@responsableSubcriterio", responsableSubcriterio);
-                cmd.Parameters.AddWithValue("@planSubcriterio", planSubcriterio);
+                cmd.Parameters.AddWithValue("@descripcionSubcriterio", descripcionSubcriterio);
                 cmd.Parameters.AddWithValue("@idCriterio", idCriterio);
 
 

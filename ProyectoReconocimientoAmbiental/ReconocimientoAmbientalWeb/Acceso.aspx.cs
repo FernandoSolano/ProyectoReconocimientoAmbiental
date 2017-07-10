@@ -34,7 +34,8 @@ namespace ReconocimientoAmbientalWeb
             {
                 Session["usuario"] = tbNombreUsuario.Text;
                 LBmensaje.Text = "Iniciaste sesión con éxito";
-                Response.Redirect("/Acceso.aspx");
+               // Response.Redirect("/Acceso.aspx");
+                Response.Redirect("/About.aspx");
             }//else
         }
     }

@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReconocimientoAmbientalLibrary.Data
 {
@@ -48,7 +45,7 @@ namespace ReconocimientoAmbientalLibrary.Data
 
         }//iniciarSesion()
 
-        public Funcionario registrarFuncionario(Funcionario funcionario)
+        public Funcionario RegistrarFuncionario(Funcionario funcionario)
         {
             SqlConnection connection = new SqlConnection(cadenaConexion);
             SqlCommand sqlCommand = new SqlCommand("sp_insertar_funcionario", connection);
@@ -78,6 +75,24 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
             return funcionario;
         }
+        
+        public LinkedList<Funcionario> ObtenerFuncionariosDisponibles()
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("sp_obtener_funcionarios_no_asignados", connection);
+            connection.Open();
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            LinkedList<Funcionario> funcionarios = new LinkedList<Funcionario>();
+            while (dataReader.Read())
+            {
+                Funcionario funcionario = new Funcionario();
+                funcionario.IdFuncionario = Int32.Parse(dataReader["idFuncionario"].ToString());
+                funcionario.NombreFuncionario = dataReader["nombreFuncionario"].ToString();
+                funcionarios.AddLast(funcionario);
+            }
+            connection.Close();
+            return funcionarios;
+        }
 
         public int obtenerIdArea(String userName)
         {
@@ -95,8 +110,26 @@ namespace ReconocimientoAmbientalLibrary.Data
             connection.Close();
 
             return numArea;
-
         }
+
+        public Funcionario ObtenerFuncionarioPorAreaAsignada(int codArea)
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("sp_obtener_Funcionario_por_idArea", connection);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@idArea", codArea));
+            connection.Open();
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            Funcionario funcionario = new Funcionario();
+            while (dataReader.Read())
+            {
+                funcionario.IdFuncionario = Int32.Parse(dataReader["idFuncionario"].ToString());
+                funcionario.NombreFuncionario = dataReader["nombreFuncionario"].ToString();
+            }
+            connection.Close();
+            return funcionario;
+        }
+
     }//FuncionarioData
 
 

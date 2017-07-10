@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipal.Master" AutoEventWireup="true" CodeBehind="Acceso.aspx.cs" Inherits="ReconocimientoAmbientalWeb.Acceso" %>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderBody" runat="server">
-   <div style="height: 355px; background-image: url('/Imagenes/login.jpg'); width: 734px; position: relative; top: 2px; left: 77px;">
+    <div style="height: 355px; background-image: url('/Imagenes/login.jpg'); width: 734px; position: relative; top: 2px; left: 77px;">
         <h1 style="margin-left: 280px">Acceso a usuarios</h1>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <br />

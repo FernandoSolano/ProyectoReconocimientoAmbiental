@@ -40,9 +40,9 @@
                 <Items>
                     <asp:MenuItem Text="Guia Ambiental" Value="Guia Ambiental">
                         <asp:MenuItem Text="Ingresar Guía Ambiental" Value="Ingresar Guía Ambiental" NavigateUrl="~/GuiaAmbientalView.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Agregar Area Tematica" Value="Agregar Area Tematica"></asp:MenuItem>
-                        <asp:MenuItem Text="Agregar criterio" Value="Agregar criterio"></asp:MenuItem>
-                        <asp:MenuItem Text="Agregar subcriterio" Value="Agregar subcriterio"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar Area Tematica" Value="Agregar Area Tematica" NavigateUrl="~/AreaTematicaView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar criterio" Value="Agregar criterio" NavigateUrl="~/CriterioView.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Agregar subcriterio" Value="Agregar subcriterio" NavigateUrl="~/SubcriterioView.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Visualizar subcriterios" Value="Visualizar subcriterios"></asp:MenuItem>
                         <asp:MenuItem Text="Generar reporte de guía" Value="Generar reporte de guía"></asp:MenuItem>
                     </asp:MenuItem>
