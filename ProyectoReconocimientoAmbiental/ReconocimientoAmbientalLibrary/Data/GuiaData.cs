@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReconocimientoAmbientalLibrary.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -46,7 +47,79 @@ namespace ReconocimientoAmbientalLibrary.Data
             sqlConnection1.Close();
         }
 
+        public List<Guia> ObtenerGuiasAmbientales() {
 
-}//GuiaData
+            List<Guia> guias = new List<Guia>();
+
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerGuias = "obtener_guias";
+            SqlCommand comandoObtenerGuias = new SqlCommand(sqlProcedureObtenerGuias, connection);
+            comandoObtenerGuias.CommandType = System.Data.CommandType.StoredProcedure;
+
+            try
+            {
+                connection.Open();
+                SqlDataReader dataReader = comandoObtenerGuias.ExecuteReader();
+                Guia guia;
+                while (dataReader.Read())
+                {
+                    guia = new Guia();
+
+                    guia.IdGuia = Int32.Parse(dataReader["idGuia"].ToString());
+                    guia.AnnoPublicacion = Int32.Parse(dataReader["annoPublicacion"].ToString());
+                    guia.Vigente = bool.Parse(dataReader["vigente"].ToString());
+                    guia.NombreGuia = dataReader["nombreGuia"].ToString();
+                    guia.FechaCreacion = DateTime.Parse(dataReader["fechaCreacion"].ToString());
+
+                    guias.Add(guia);
+                }
+                connection.Close();
+                return guias;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+        }
+
+        public Guia ObtenerGuiaAmbiental(int idGuia)
+        {
+            
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerGuia = "obtener_guia_por_id";
+            SqlCommand comandoObtenerGuia = new SqlCommand(sqlProcedureObtenerGuia, connection);
+            comandoObtenerGuia.CommandType = System.Data.CommandType.StoredProcedure;
+
+            try
+            {
+                connection.Open();
+                SqlDataReader dataReader = comandoObtenerGuia.ExecuteReader();
+                Guia guia = new Guia();
+
+                guia.IdGuia = Int32.Parse(dataReader["idGuia"].ToString());
+                guia.AnnoPublicacion = Int32.Parse(dataReader["annoPublicacion"].ToString());
+                guia.Vigente = bool.Parse(dataReader["vigente"].ToString());
+                guia.NombreGuia = dataReader["nombreGuia"].ToString();
+                guia.FechaCreacion = DateTime.Parse(dataReader["fechaCreacion"].ToString());
+                
+                connection.Close();
+                return guia;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+    }//GuiaData
 
 }//namespace

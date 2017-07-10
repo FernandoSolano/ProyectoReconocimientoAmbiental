@@ -69,6 +69,44 @@ namespace ReconocimientoAmbientalLibrary.Data
 
         }//ObtenerAreasTematicas()
 
+        public LinkedList<AreaTematica> obtenerAreasPorIdGuia(int idGuia)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerAreas = "obtener_area_temtica_por_id_guia";
+            SqlCommand comandoObtenerAreas = new SqlCommand(sqlProcedureObtenerAreas, connection);
+            comandoObtenerAreas.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtenerAreas.Parameters.Add(new SqlParameter("@idGuia", idGuia));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drAreas = comandoObtenerAreas.ExecuteReader();
+                LinkedList<AreaTematica> areasTematicas = new LinkedList<AreaTematica>();
+                while (drAreas.Read())
+                {
+
+                    AreaTematica areaTematica = new AreaTematica();
+                    areaTematica.IdArea = Int32.Parse(drAreas["idArea"].ToString());
+                    areaTematica.NombreAreaTematica = drAreas["nombreAreaTematica"].ToString();
+                    areaTematica.DescripcionArea = drAreas["descripcionArea"].ToString();
+                    areaTematica.Sigla = drAreas["siglaArea"].ToString();
+                   
+
+                    areasTematicas.AddLast(areaTematica);
+                }//while
+                connection.Close();
+                return areasTematicas;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
         public AreaTematica ObtenerAreaTematicaPorId(int codArea)
         {
             String query = "SELECT * FROM AreaTematica WHERE idArea="+codArea;

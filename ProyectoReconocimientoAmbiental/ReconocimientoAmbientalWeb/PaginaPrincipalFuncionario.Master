@@ -32,7 +32,7 @@
             <asp:Menu ID="MenuAreaTematica" runat="server" ForeColor="#0033CC">
                 <Items>
                     <asp:MenuItem Text="Área temática" Value="Área temática">
-                        <asp:MenuItem Text="Visualizar criterios y subcriterios del área" Value="Registrar usuario"></asp:MenuItem>
+                        <asp:MenuItem Text="Visualizar criterios y subcriterios del área" Value="Visualizar criterios y subcriterios"  NavigateUrl="~/VisualizarInformacionCriterios.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Generar reporte de área temática" Value="Generar reporte de área temática"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>

@@ -190,6 +190,7 @@
     <Content Include="PaginaPrincipalFuncionario.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="RegistroUsuario.aspx" />
+    <Content Include="ReporteGuia.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -225,6 +226,8 @@
     <Content Include="Site.Master" />
     <Content Include="SubcriterioView.aspx" />
     <Content Include="ViewSwitcher.ascx" />
+    <Content Include="VisualizarIinformacionSubcriterios.aspx" />
+    <Content Include="VisualizarInformacionCriterios.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -445,6 +448,13 @@
     <Compile Include="RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ReporteGuia.aspx.cs">
+      <DependentUpon>ReporteGuia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteGuia.aspx.designer.cs">
+      <DependentUpon>ReporteGuia.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -473,6 +483,20 @@
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarIinformacionSubcriterios.aspx.cs">
+      <DependentUpon>VisualizarIinformacionSubcriterios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarIinformacionSubcriterios.aspx.designer.cs">
+      <DependentUpon>VisualizarIinformacionSubcriterios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VisualizarInformacionCriterios.aspx.cs">
+      <DependentUpon>VisualizarInformacionCriterios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VisualizarInformacionCriterios.aspx.designer.cs">
+      <DependentUpon>VisualizarInformacionCriterios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

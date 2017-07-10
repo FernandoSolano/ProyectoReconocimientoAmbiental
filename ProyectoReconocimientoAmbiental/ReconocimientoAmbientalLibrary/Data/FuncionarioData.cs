@@ -94,6 +94,24 @@ namespace ReconocimientoAmbientalLibrary.Data
             return funcionarios;
         }
 
+        public int obtenerIdArea(String userName)
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("sp_obtener_area_funcionario", connection);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@username",userName));
+            connection.Open();
+            SqlDataReader drIdArea = cmd.ExecuteReader();
+           int numArea=0;
+            while (drIdArea.Read())
+            {
+                numArea = Int32.Parse(drIdArea["idArea"].ToString());
+            }
+            connection.Close();
+
+            return numArea;
+        }
+
         public Funcionario ObtenerFuncionarioPorAreaAsignada(int codArea)
         {
             SqlConnection connection = new SqlConnection(cadenaConexion);
@@ -113,5 +131,7 @@ namespace ReconocimientoAmbientalLibrary.Data
         }
 
     }//FuncionarioData
+
+
 
 }//namespace

@@ -12,11 +12,21 @@ namespace ReconocimientoAmbientalLibrary.Domain
         private String descripcionCriterio;
         private String nombreCriterio;
         private LinkedList<Subcriterio> subcriterios;
+        private int cod;
+        private string name;
+        private string description;
 
         public Criterio()
         {
 
         }//constructor
+
+        public Criterio(int cod, string name, string description)
+        {
+            this.cod = cod;
+            this.name = name;
+            this.description = description;
+        }
 
         public int IdCriterio
         {
