@@ -26,6 +26,11 @@ namespace ReconocimientoAmbientalLibrary.Business
             return this.subcriterioData.ObtenerSubcriterios();
         }//ObtenerCriterios
 
-    }//SubcriterioBusiness
+        public LinkedList<Subcriterio> obtenerSubcriteriosPorIdCriterio(int idCriterio)
+        {
+            return this.subcriterioData.obtenerSubcriteriosPorIdCriterio(idCriterio);
+        }
+
+        }//SubcriterioBusiness
 
 }//namespace
