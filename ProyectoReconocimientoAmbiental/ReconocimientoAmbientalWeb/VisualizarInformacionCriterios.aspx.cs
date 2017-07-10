@@ -17,7 +17,7 @@ namespace ReconocimientoAmbientalWeb
             FuncionarioBusiness funcionarioBusiness = new FuncionarioBusiness(WebConfigurationManager.ConnectionStrings["PRA_DFGKP"].ConnectionString);
             CriterioBusiness criterioBusiness = new CriterioBusiness(WebConfigurationManager.ConnectionStrings["PRA_DFGKP"].ConnectionString);
 
-            //Session["usuarioFuncionario"] = "Juan Solís";
+           // Session["usuarioFuncionario"] = "Juan Solís";
             GVCriterios.DataSource = criterioBusiness.obtenerCriteriosPorIdArea(funcionarioBusiness.obtenerIdArea(Session["usuarioFuncionario"].ToString()));
             GVCriterios.DataBind();
         }
