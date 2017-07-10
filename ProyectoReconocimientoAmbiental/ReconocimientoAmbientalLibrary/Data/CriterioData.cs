@@ -70,6 +70,43 @@ namespace ReconocimientoAmbientalLibrary.Data
 
         }//ObtenerCriterios()
 
+        public LinkedList<Criterio> obtenerCriteriosPorIdArea(int idArea)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerCriterios = "obtener_criterio_por_id_area";
+            SqlCommand comandoObtenerCriterios = new SqlCommand(sqlProcedureObtenerCriterios, connection);
+            comandoObtenerCriterios.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtenerCriterios.Parameters.Add(new SqlParameter("@idArea", idArea));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drCriterio = comandoObtenerCriterios.ExecuteReader();
+                LinkedList<Criterio> criterios = new LinkedList<Criterio>();
+                while (drCriterio.Read())
+                {
+
+                    Criterio criterio = new Criterio();
+
+                    criterio.IdCriterio = Int32.Parse(drCriterio["idCriterio"].ToString());
+                    criterio.NombreCriterio = drCriterio["nombreCriterio"].ToString();
+                    criterio.DescripcionCriterio = drCriterio["descripcionCriterio"].ToString();
+
+                    criterios.AddLast(criterio);
+                }//while
+                connection.Close();
+                return criterios;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }//CriterioData
 
 }//namespace
