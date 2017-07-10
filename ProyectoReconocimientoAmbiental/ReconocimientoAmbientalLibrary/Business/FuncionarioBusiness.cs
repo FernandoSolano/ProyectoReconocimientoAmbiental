@@ -25,7 +25,17 @@ namespace ReconocimientoAmbientalLibrary.Business
 
         public Funcionario registrarFuncionario(Funcionario funcionario)
         {
-            return funcionarioData.registrarFuncionario(funcionario);
+            return funcionarioData.RegistrarFuncionario(funcionario);
+        }
+
+        public LinkedList<Funcionario> ObtenerFuncionariosDisponibles()
+        {
+            return funcionarioData.ObtenerFuncionariosDisponibles();
+        }
+
+        public Funcionario ObtenerFuncionarioPorAreaAsignada(int codArea)
+        {
+            return funcionarioData.ObtenerFuncionarioPorAreaAsignada(codArea);
         }
 
     }//FuncionarioBusiness

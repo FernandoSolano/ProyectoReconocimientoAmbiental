@@ -173,6 +173,7 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="AreaTematicaView.aspx" />
+    <Content Include="AsignarResponsable.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -376,6 +377,12 @@
     </Compile>
     <Compile Include="AreaTematicaView.aspx.designer.cs">
       <DependentUpon>AreaTematicaView.aspx</DependentUpon>
+    <Compile Include="AsignarResponsable.aspx.cs">
+      <DependentUpon>AsignarResponsable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AsignarResponsable.aspx.designer.cs">
+      <DependentUpon>AsignarResponsable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
