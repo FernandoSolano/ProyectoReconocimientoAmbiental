@@ -83,13 +83,18 @@ namespace ReconocimientoAmbientalLibrary.Data
         {
             SqlConnection connection = new SqlConnection(cadenaConexion);
             SqlCommand cmd = new SqlCommand("sp_obtener_area_funcionario", connection);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@username",userName));
             connection.Open();
             SqlDataReader drIdArea = cmd.ExecuteReader();
-
-
+           int numArea=0;
+            while (drIdArea.Read())
+            {
+                numArea = Int32.Parse(drIdArea["idArea"].ToString());
+            }
             connection.Close();
 
-            return Int32.Parse(drIdArea["idArea"].ToString());
+            return numArea;
 
         }
     }//FuncionarioData

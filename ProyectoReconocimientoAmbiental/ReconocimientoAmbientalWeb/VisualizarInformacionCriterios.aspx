@@ -5,12 +5,17 @@
     <asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Size="X-Large" ForeColor="#0000CC" Text="Listado de criterios"></asp:Label>
      <br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    <asp:GridView ID="GVCriterios" runat="server" AutoGenerateColumns="False" Width="654px">
         <Columns>
             <asp:BoundField DataField="idCriterio" HeaderText="ID" SortExpression="idCriterio" />
             <asp:BoundField DataField="nombreCriterio" HeaderText="Nombre" SortExpression="nombreCriterio" />
             <asp:BoundField DataField="descripcionCriterio" HeaderText="Descripcion" SortExpression="descripcionCriterio" />
-            <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Ver subcriterios" ShowHeader="True" Text="Mostrar subcriterios" />
+            <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:LinkButton HeaderText="Ir a subcriterios" ID="lnkDownload" runat="server" Text="Ver subcriterios" OnClick="irASubcriterios" 
+                            CommandArgument='<%# Eval("idCriterio") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
         </Columns>
     </asp:GridView>
     <br />
