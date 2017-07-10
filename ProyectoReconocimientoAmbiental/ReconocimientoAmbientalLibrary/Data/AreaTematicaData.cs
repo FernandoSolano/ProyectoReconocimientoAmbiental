@@ -57,11 +57,11 @@ namespace ReconocimientoAmbientalLibrary.Data
             LinkedList<AreaTematica> areasTematicas = new LinkedList<AreaTematica>();
             while (drAreas.Read())
             {
-
                 AreaTematica areaTematica = new AreaTematica();
                 areaTematica.NombreAreaTematica = drAreas["nombreAreaTematica"].ToString();
                 areaTematica.IdArea = Int32.Parse(drAreas["idArea"].ToString());
-
+                areaTematica.DescripcionArea = drAreas["descripcionArea"].ToString();
+                areaTematica.Sigla = drAreas["siglaArea"].ToString();
                 areasTematicas.AddLast(areaTematica);
             }//while
             connection.Close();
@@ -107,6 +107,24 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
         }
 
-        }//AreaTematicaData
+        public AreaTematica ObtenerAreaTematicaPorId(int codArea)
+        {
+            String query = "SELECT * FROM AreaTematica WHERE idArea="+codArea;
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader dataReader = cmd.ExecuteReader();
+            AreaTematica areaTematica = new AreaTematica();
+            while (dataReader.Read())
+            {
+                areaTematica.IdArea = Int32.Parse(dataReader["idArea"].ToString());
+                areaTematica.NombreAreaTematica = dataReader["nombreAreaTematica"].ToString();
+                areaTematica.DescripcionArea = dataReader["descripcionArea"].ToString();
+            }
+            connection.Close();
+            return areaTematica;
+        }
+
+    }//AreaTematicaData
 
 }//namespace
