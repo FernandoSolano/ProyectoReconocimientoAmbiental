@@ -26,5 +26,9 @@ namespace ReconocimientoAmbientalLibrary.Business
             return this.areaTematicaData.ObtenerAreasTematicas();
         }//ObtenerAreasTematicas
 
+        public LinkedList<AreaTematica> obtenerAreasPorIdGuia(int idGuia) {
+            return this.areaTematicaData.obtenerAreasPorIdGuia(idGuia);
+        }
+
     }//AreaTematicaBusiness
 }//namespace

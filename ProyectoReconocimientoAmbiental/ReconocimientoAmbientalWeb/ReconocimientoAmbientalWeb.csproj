@@ -189,6 +189,7 @@
     <Content Include="PaginaPrincipalFuncionario.Master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="RegistroUsuario.aspx" />
+    <Content Include="ReporteGuia.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -437,6 +438,13 @@
     </Compile>
     <Compile Include="RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteGuia.aspx.cs">
+      <DependentUpon>ReporteGuia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteGuia.aspx.designer.cs">
+      <DependentUpon>ReporteGuia.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
