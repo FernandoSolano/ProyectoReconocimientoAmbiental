@@ -42,12 +42,14 @@
   <ItemGroup>
     <Compile Include="Business\AreaTematicaBusiness.cs" />
     <Compile Include="Business\CriterioBusiness.cs" />
+    <Compile Include="Business\EncargadoEvaluacionBusiness.cs" />
     <Compile Include="Business\FuncionarioBusiness.cs" />
     <Compile Include="Business\GuiaBusiness.cs" />
     <Compile Include="Business\RecintoBusiness.cs" />
     <Compile Include="Business\SubcriterioBusiness.cs" />
     <Compile Include="Data\AreaTematicaData.cs" />
     <Compile Include="Data\CriterioData.cs" />
+    <Compile Include="Data\EncargadoEvaluacionData.cs" />
     <Compile Include="Data\FuncionarioData.cs" />
     <Compile Include="Data\GuiaData.cs" />
     <Compile Include="Data\RecintoData.cs" />
