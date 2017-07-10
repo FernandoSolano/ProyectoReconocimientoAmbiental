@@ -28,6 +28,12 @@ namespace ReconocimientoAmbientalLibrary.Business
             return funcionarioData.registrarFuncionario(funcionario);
         }
 
+
+        public int obtenerIdArea(String userName)
+        {
+            return funcionarioData.obtenerIdArea(userName);
+        }
+
     }//FuncionarioBusiness
 
 }//namespace

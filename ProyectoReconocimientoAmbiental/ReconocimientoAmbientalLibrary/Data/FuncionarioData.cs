@@ -79,7 +79,21 @@ namespace ReconocimientoAmbientalLibrary.Data
             return funcionario;
         }
 
+        public int obtenerIdArea(String userName)
+        {
+            SqlConnection connection = new SqlConnection(cadenaConexion);
+            SqlCommand cmd = new SqlCommand("sp_obtener_area_funcionario", connection);
+            connection.Open();
+            SqlDataReader drIdArea = cmd.ExecuteReader();
 
+
+            connection.Close();
+
+            return Int32.Parse(drIdArea["idArea"].ToString());
+
+        }
     }//FuncionarioData
+
+
 
 }//namespace

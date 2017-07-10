@@ -62,6 +62,7 @@ namespace ReconocimientoAmbientalLibrary.Data
                 Criterio criterio = new Criterio();
                 criterio.NombreCriterio = drCriterios["nombreCriterio"].ToString();
                 criterio.IdCriterio =Int32.Parse (drCriterios["idCriterio"].ToString());
+                criterio.DescripcionCriterio = drCriterios["descripcionCriterio"].ToString();
 
                 criterios.AddLast(criterio);
             }//while
