@@ -19,7 +19,6 @@
 &nbsp;
 <br />
 <br />
-    
     <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="438px" Width="662px" Visible="False" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
         <LocalReport ReportPath="ReporteGuia.rdlc">
             <DataSources>

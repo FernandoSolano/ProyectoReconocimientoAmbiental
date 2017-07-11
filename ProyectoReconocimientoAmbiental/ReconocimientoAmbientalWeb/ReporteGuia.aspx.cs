@@ -1,3 +1,4 @@
+
 ﻿using Microsoft.Reporting.WebForms;
 using ReconocimientoAmbientalLibrary.Business;
 using ReconocimientoAmbientalLibrary.Domain;
@@ -20,7 +21,6 @@ namespace ReconocimientoAmbientalWeb
         protected void Page_Load(object sender, EventArgs e)
         {
             this.guiaBusiness = new GuiaBusiness(WebConfigurationManager.ConnectionStrings["PRA_DFGKP"].ConnectionString);
-
             if (!IsPostBack) {
                 
                 cargarGuias();
@@ -47,9 +47,6 @@ namespace ReconocimientoAmbientalWeb
             ReportViewer1.LocalReport.Refresh();
             
         }
-
-
-
 
     }
 }

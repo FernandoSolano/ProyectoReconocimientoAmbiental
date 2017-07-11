@@ -9,16 +9,19 @@ namespace ReconocimientoAmbientalLibrary.Domain
     public class Documento : Evidencia
     {
         private int idDocumento;
-        private int tipoDocumento;
+        private String tipoDocumento;
         private String detalleDocumento;
         private String fuenteEmisor;
         private DateTime fechaEmision;
-        private String urlDocumento;
+        private byte[] documentoFile;
+        private String typeFile;
+        private String nombreArchivo;
+        private Evidencia evidencia;
 
         public Documento()
         {
 
-        }//constructor
+        }
 
         public int IdDocumento
         {
@@ -33,7 +36,7 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public int TipoDocumento
+        public string TipoDocumento
         {
             get
             {
@@ -85,16 +88,55 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public string UrlDocumento
+        public byte[] DocumentoFile
         {
             get
             {
-                return urlDocumento;
+                return documentoFile;
             }
 
             set
             {
-                urlDocumento = value;
+                documentoFile = value;
+            }
+        }
+
+        public string TypeFile
+        {
+            get
+            {
+                return typeFile;
+            }
+
+            set
+            {
+                typeFile = value;
+            }
+        }
+
+        public string NombreArchivo
+        {
+            get
+            {
+                return nombreArchivo;
+            }
+
+            set
+            {
+                nombreArchivo = value;
+            }
+        }
+
+        public Evidencia Evidencia
+        {
+            get
+            {
+                return evidencia;
+            }
+
+            set
+            {
+                evidencia = value;
             }
         }
     }//Documento

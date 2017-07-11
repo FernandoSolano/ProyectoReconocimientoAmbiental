@@ -186,6 +186,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="GuiaAmbientalView.aspx" />
+    <Content Include="MostrarSubcriterios.aspx" />
+    <Content Include="nuevaAccion.aspx" />
+    <Content Include="NuevaActividad.aspx" />
+    <Content Include="nuevaEvidenciaMenu.aspx" />
+    <Content Include="NuevaNormativa.aspx" />
+    <Content Include="NuevoDocumento.aspx" />
     <Content Include="PaginaPrincipal.Master" />
     <Content Include="PRA_DFGKPDataSet.xsc">
       <DependentUpon>PRA_DFGKPDataSet.xsd</DependentUpon>
@@ -247,6 +253,15 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="SubcriterioView.aspx" />
+    <Content Include="verAccion.aspx" />
+    <Content Include="verCriterio.aspx" />
+    <Content Include="verSubcriterio.aspx" />
+    <Content Include="verAcciones.aspx" />
+    <Content Include="verActividades.aspx" />
+    <Content Include="verDocumento.aspx" />
+    <Content Include="VerDocumentos.aspx" />
+    <Content Include="verNormativa.aspx" />
+    <Content Include="verNormativas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -394,6 +409,8 @@
     </Compile>
     <Compile Include="BuscarEvidencias.aspx.cs">
       <DependentUpon>BuscarEvidencias.aspx</DependentUpon>
+    <Compile Include="AsignarResponsable.aspx.cs">
+      <DependentUpon>AsignarResponsable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="BuscarEvidencias.aspx.designer.cs">
@@ -438,6 +455,48 @@
       <DependentUpon>GuiaAmbientalView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MostrarSubcriterios.aspx.cs">
+      <DependentUpon>MostrarSubcriterios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarSubcriterios.aspx.designer.cs">
+      <DependentUpon>MostrarSubcriterios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nuevaAccion.aspx.cs">
+      <DependentUpon>nuevaAccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevaAccion.aspx.designer.cs">
+      <DependentUpon>nuevaAccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaActividad.aspx.cs">
+      <DependentUpon>NuevaActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaActividad.aspx.designer.cs">
+      <DependentUpon>NuevaActividad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="nuevaEvidenciaMenu.aspx.cs">
+      <DependentUpon>nuevaEvidenciaMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="nuevaEvidenciaMenu.aspx.designer.cs">
+      <DependentUpon>nuevaEvidenciaMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaNormativa.aspx.cs">
+      <DependentUpon>NuevaNormativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaNormativa.aspx.designer.cs">
+      <DependentUpon>NuevaNormativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NuevoDocumento.aspx.cs">
+      <DependentUpon>NuevoDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevoDocumento.aspx.designer.cs">
+      <DependentUpon>NuevoDocumento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PaginaPrincipal.Master.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -498,6 +557,69 @@
     </Compile>
     <Compile Include="SubcriterioView.aspx.designer.cs">
       <DependentUpon>SubcriterioView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verAccion.aspx.cs">
+      <DependentUpon>verAccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verAccion.aspx.designer.cs">
+      <DependentUpon>verAccion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verCriterio.aspx.cs">
+      <DependentUpon>verCriterio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verCriterio.aspx.designer.cs">
+      <DependentUpon>verCriterio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verSubcriterio.aspx.cs">
+      <DependentUpon>verSubcriterio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verSubcriterio.aspx.designer.cs">
+      <DependentUpon>verSubcriterio.aspx</DependentUpon>
+      </Compile>
+    <Compile Include="verAcciones.aspx.cs">
+      <DependentUpon>verAcciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verAcciones.aspx.designer.cs">
+      <DependentUpon>verAcciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verActividades.aspx.cs">
+      <DependentUpon>verActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verActividades.aspx.designer.cs">
+      <DependentUpon>verActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verDocumento.aspx.cs">
+      <DependentUpon>verDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verDocumento.aspx.designer.cs">
+      <DependentUpon>verDocumento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerDocumentos.aspx.cs">
+      <DependentUpon>VerDocumentos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerDocumentos.aspx.designer.cs">
+      <DependentUpon>VerDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verNormativa.aspx.cs">
+      <DependentUpon>verNormativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verNormativa.aspx.designer.cs">
+      <DependentUpon>verNormativa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verNormativas.aspx.cs">
+      <DependentUpon>verNormativas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verNormativas.aspx.designer.cs">
+      <DependentUpon>verNormativas.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
