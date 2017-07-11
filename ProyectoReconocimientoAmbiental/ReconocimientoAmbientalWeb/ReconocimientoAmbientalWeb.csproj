@@ -186,8 +186,31 @@
     <Content Include="Account\Web.config" />
     <Content Include="GuiaAmbientalView.aspx" />
     <Content Include="PaginaPrincipal.Master" />
+    <Content Include="PRA_DFGKPDataSet.xsc">
+      <DependentUpon>PRA_DFGKPDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="PRA_DFGKPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PRA_DFGKPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PRA_DFGKPDataSet.xss">
+      <DependentUpon>PRA_DFGKPDataSet.xsd</DependentUpon>
+    </Content>
+    <Content Include="PRA_DFGKPDataSet2.xsc">
+      <DependentUpon>PRA_DFGKPDataSet2.xsd</DependentUpon>
+    </Content>
+    <None Include="PRA_DFGKPDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PRA_DFGKPDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="PRA_DFGKPDataSet2.xss">
+      <DependentUpon>PRA_DFGKPDataSet2.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="RegistroUsuario.aspx" />
+    <Content Include="ReporteEvaluacion.aspx" />
     <Content Include="ReporteGuia.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -414,6 +437,16 @@
     <Compile Include="PaginaPrincipal.Master.designer.cs">
       <DependentUpon>PaginaPrincipal.Master</DependentUpon>
     </Compile>
+    <Compile Include="PRA_DFGKPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRA_DFGKPDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PRA_DFGKPDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRA_DFGKPDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistroUsuario.aspx.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
@@ -421,6 +454,13 @@
     </Compile>
     <Compile Include="RegistroUsuario.aspx.designer.cs">
       <DependentUpon>RegistroUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEvaluacion.aspx.cs">
+      <DependentUpon>ReporteEvaluacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReporteEvaluacion.aspx.designer.cs">
+      <DependentUpon>ReporteEvaluacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReporteGuia.aspx.cs">
       <DependentUpon>ReporteGuia.aspx</DependentUpon>
@@ -467,6 +507,10 @@
       <Project>{0022D627-B1DD-491F-B876-4F7F27328E85}</Project>
       <Name>ReconocimientoAmbientalLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReporteEvaluacion.rdlc" />
+    <EmbeddedResource Include="ReporteGuia.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

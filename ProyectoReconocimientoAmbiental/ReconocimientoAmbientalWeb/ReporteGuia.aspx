@@ -20,8 +20,14 @@
 <br />
 <br />
     
-    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="438px" ProcessingMode="Remote" Width="662px" Visible="false">
+    <rsweb:ReportViewer ID="ReportViewer1" runat="server" Height="438px" Width="662px" Visible="False" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt">
+        <LocalReport ReportPath="ReporteGuia.rdlc">
+            <DataSources>
+                <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="dsArea" />
+            </DataSources>
+        </LocalReport>
     </rsweb:ReportViewer>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="ReconocimientoAmbientalWeb.PRA_DFGKPDataSetTableAdapters.sp_generar_reporte_guiaTableAdapter"></asp:ObjectDataSource>
 <br />
     <br />
 

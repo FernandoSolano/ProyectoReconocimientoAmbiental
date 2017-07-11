@@ -1,6 +1,7 @@
 ﻿using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -122,6 +123,36 @@ namespace ReconocimientoAmbientalLibrary.Data
             {
                 connection.Close();
             }
+        }
+
+        public DataTable getReporte(int idGuia)
+        {
+            DataTable ResultsTable = new DataTable();
+
+            SqlConnection conn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("sp_generar_reporte_guia", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@idGuia", idGuia);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                adapter.Fill(ResultsTable);
+            }
+
+            catch (Exception ex)
+            {
+                Console.Write(ex);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+
+            return ResultsTable;
         }
 
     }//GuiaData
