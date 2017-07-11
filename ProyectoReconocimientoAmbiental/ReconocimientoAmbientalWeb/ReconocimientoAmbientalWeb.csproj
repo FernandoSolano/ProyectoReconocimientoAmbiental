@@ -202,6 +202,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <Content Include="GuiaAmbientalView.aspx" />
+    <Content Include="MostrarSubcriterios.aspx" />
     <Content Include="nuevaAccion.aspx" />
     <Content Include="nuevaEvidenciaMenu.aspx" />
     <Content Include="NuevaNormativa.aspx" />
@@ -450,6 +451,13 @@
       <DependentUpon>GuiaAmbientalView.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="MostrarSubcriterios.aspx.cs">
+      <DependentUpon>MostrarSubcriterios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MostrarSubcriterios.aspx.designer.cs">
+      <DependentUpon>MostrarSubcriterios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="nuevaAccion.aspx.cs">
       <DependentUpon>nuevaAccion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
