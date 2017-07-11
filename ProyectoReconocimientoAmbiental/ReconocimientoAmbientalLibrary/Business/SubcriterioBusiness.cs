@@ -2,9 +2,6 @@
 using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ReconocimientoAmbientalLibrary.Business
 {
@@ -31,6 +28,11 @@ namespace ReconocimientoAmbientalLibrary.Business
             return this.subcriterioData.obtenerSubcriteriosPorIdCriterio(idCriterio);
         }
 
-        }//SubcriterioBusiness
+        public LinkedList<Subcriterio> obtenerSubcriteriosPorIdArea(int idArea)
+        {
+            return subcriterioData.obtenerSubcriteriosPorIdArea(idArea);
+        }
+
+    }//SubcriterioBusiness
 
 }//namespace

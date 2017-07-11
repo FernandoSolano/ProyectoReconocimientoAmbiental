@@ -106,6 +106,38 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
         }
 
+        public LinkedList<Subcriterio> obtenerSubcriteriosPorIdArea(int idArea)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            SqlCommand sqlCommand = new SqlCommand("sp_obtener_subcriterios_por_id_area", connection);
+            sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+            sqlCommand.Parameters.Add(new SqlParameter("@idArea", idArea));
+            try
+            {
+                connection.Open();
+                SqlDataReader dataReader = sqlCommand.ExecuteReader();
+                LinkedList<Subcriterio> subcriterios = new LinkedList<Subcriterio>();
+                while (dataReader.Read())
+                {
+                    Subcriterio subcriterio = new Subcriterio();
+                    subcriterio.IdSubcriterio = Int32.Parse(dataReader["idSubcriterio"].ToString());
+                    subcriterio.NombreSubcriterio = dataReader["nombreSubcriterio"].ToString();
+                    subcriterio.DescripcionSubcriterio = dataReader["descripcionSubcriterio"].ToString();
+                    subcriterios.AddLast(subcriterio);
+                }//while
+                connection.Close();
+                return subcriterios;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }//SubcriterioData
 
 }//namespace
