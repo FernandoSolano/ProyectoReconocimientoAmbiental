@@ -20,7 +20,7 @@
             <Items>
                 <asp:MenuItem Text="Evidencias" Value="Evidencias">
                     <asp:MenuItem Text="Visualizar evidencias" Value="Visualizar evidencias"></asp:MenuItem>
-                    <asp:MenuItem Text="Ingresar una evidencia" Value="Ingresar una evidencia"></asp:MenuItem>
+                    <asp:MenuItem Text="Ingresar una evidencia" Value="Ingresar una evidencia" NavigateUrl="~/nuevaEvidenciaMenu.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Registrar evidencia para subcriterio" Value="Descargar reporte por área"></asp:MenuItem>
                     <asp:MenuItem Text="Descargar adjuntos evidencia" Value="Descargar adjuntos evidencia"></asp:MenuItem>
                     <asp:MenuItem Text="Ver evidencias por subcriterio" Value="Ver evidencias por subcriterio"></asp:MenuItem>
@@ -62,7 +62,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="LBususesion" runat="server" ForeColor="#3366FF"></asp:Label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="LinkAbrirSesion" runat="server" NavigateUrl="~/Acceso.aspx" Font-Underline="False" ForeColor="#3366FF">Iniciar Sesión</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:HyperLink ID="LinkAbrirSesion" runat="server" NavigateUrl="~/AccesoFuncionario.aspx" Font-Underline="False" ForeColor="#3366FF">Iniciar Sesión</asp:HyperLink>
             <asp:LinkButton ID="LinkCerrarSesion" runat="server" Font-Underline="False" ForeColor="#3366FF" OnClick="LinkCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
         </div>
         <div style="background-image: url('/Imagenes/ucr.jpg'); position: relative; top: -586px; left: -2px; width: 345px; height: 137px;">

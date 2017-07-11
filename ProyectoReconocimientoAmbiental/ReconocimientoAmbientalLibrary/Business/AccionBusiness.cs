@@ -19,9 +19,9 @@ namespace ReconocimientoAmbientalLibrary.Business
             this.accionData = new AccionData(cadenaConexion);
         }//constructor
 
-        public void getAll(GridView grid)
+        public void getAll(GridView grid,String username)
         {
-            accionData.getAll(grid);
+            accionData.getAll(grid, username);
         }
 
         public LinkedList<Subcriterio> ObtenerSubcriterios()
