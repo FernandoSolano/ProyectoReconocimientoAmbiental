@@ -106,6 +106,75 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
         }
 
-    }//SubcriterioData
+        public LinkedList<Subcriterio> obtenerSubcriterioPorId(int id)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerCriterios = "get_subcriterio_por_id";
+            SqlCommand comandoObtenerCriterios = new SqlCommand(sqlProcedureObtenerCriterios, connection);
+            comandoObtenerCriterios.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtenerCriterios.Parameters.Add(new SqlParameter("@idSubcriterio", id));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drCriterio = comandoObtenerCriterios.ExecuteReader();
+                LinkedList<Subcriterio> subcriterios = new LinkedList<Subcriterio>();
+                while (drCriterio.Read())
+                {
+
+                    Subcriterio subcriterio = new Subcriterio();
+
+                    subcriterio.IdSubcriterio = Int32.Parse(drCriterio["idSubcriterio"].ToString());
+                    subcriterio.NombreSubcriterio = drCriterio["nombreSubcriterio"].ToString();
+                    subcriterio.DescripcionSubcriterio = drCriterio["descripcionSubcriterio"].ToString();
+
+                    subcriterios.AddLast(subcriterio);
+                }//while
+                connection.Close();
+                return subcriterios;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+    public LinkedList<Subcriterio> obtenerSubcriteriosPorIdArea(int idArea)
+    {
+        SqlConnection connection = new SqlConnection(this.cadenaConexion);
+        SqlCommand sqlCommand = new SqlCommand("sp_obtener_subcriterios_por_id_area", connection);
+        sqlCommand.CommandType = System.Data.CommandType.StoredProcedure;
+        sqlCommand.Parameters.Add(new SqlParameter("@idArea", idArea));
+        try
+        {
+            connection.Open();
+            SqlDataReader dataReader = sqlCommand.ExecuteReader();
+            LinkedList<Subcriterio> subcriterios = new LinkedList<Subcriterio>();
+            while (dataReader.Read())
+            {
+                Subcriterio subcriterio = new Subcriterio();
+                subcriterio.IdSubcriterio = Int32.Parse(dataReader["idSubcriterio"].ToString());
+                subcriterio.NombreSubcriterio = dataReader["nombreSubcriterio"].ToString();
+                subcriterio.DescripcionSubcriterio = dataReader["descripcionSubcriterio"].ToString();
+                subcriterios.AddLast(subcriterio);
+            }//while
+            connection.Close();
+            return subcriterios;
+        }
+        catch (SqlException exc)
+        {
+            throw exc;
+        }
+        finally
+        {
+            connection.Close();
+        }
+    }
+
+}//SubcriterioData
 
 }//namespace

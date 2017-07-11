@@ -19,5 +19,12 @@ namespace ReconocimientoAmbientalWeb
             GVSub.DataBind();
 
         }
+
+        protected void irASubcriterio(object sender, EventArgs e)
+        {
+            int id = int.Parse((sender as LinkButton).CommandArgument);
+
+            Response.Redirect("verSubcriterio.aspx?id=" + id);
+        }
     }
 }

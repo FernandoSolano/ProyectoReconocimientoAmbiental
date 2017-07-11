@@ -26,10 +26,16 @@ namespace ReconocimientoAmbientalLibrary.Business
             return this.criterioData.ObtenerCriterios();
         }//ObtenerCriterios
 
-        public LinkedList<Criterio> obtenerCriteriosPorIdArea(int idArea) {
+        public LinkedList<Criterio> obtenerCriteriosPorIdArea(int idArea)
+        {
             return criterioData.obtenerCriteriosPorIdArea(idArea);
         }
 
-    }//CriterioBusiness
+        public LinkedList<Criterio> obtenerCriterioPorId(int id)
+        {
+            return criterioData.obtenerCriterioPorId(id);
+        }
+
+        }//CriterioBusiness
 
 }//namespace

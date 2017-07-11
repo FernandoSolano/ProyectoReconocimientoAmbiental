@@ -20,13 +20,14 @@ namespace ReconocimientoAmbientalLibrary.Data
             this.cadenaConexion = cadenaConexion;
         }//constructor
 
-        public void getAll(GridView grid)
+        public void getAll(GridView grid, String username)
         {
             SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
             SqlCommand cmd;
             sqlConnection1.Open();
             cmd = new SqlCommand("mostrar_acciones", sqlConnection1);
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@username", username);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
