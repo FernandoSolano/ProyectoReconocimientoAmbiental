@@ -10,12 +10,16 @@ namespace ReconocimientoAmbientalLibrary.Domain
     {
         private int idNormativa;
         private String detalleNormativa;
-        private String urlNormativa;
+        private byte[] normativaArchivo;
+        private String tipoArchivo;
+        private String nombreArchivo;
+        private Evidencia evidencia;
 
         public Normativa()
         {
 
-        }//constructor
+        }
+
 
         public int IdNormativa
         {
@@ -43,16 +47,55 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public string UrlNormativa
+        public byte[] NormativaArchivo
         {
             get
             {
-                return urlNormativa;
+                return normativaArchivo;
             }
 
             set
             {
-                urlNormativa = value;
+                normativaArchivo = value;
+            }
+        }
+
+        public string TipoArchivo
+        {
+            get
+            {
+                return tipoArchivo;
+            }
+
+            set
+            {
+                tipoArchivo = value;
+            }
+        }
+
+        public string NombreArchivo
+        {
+            get
+            {
+                return nombreArchivo;
+            }
+
+            set
+            {
+                nombreArchivo = value;
+            }
+        }
+
+        public Evidencia Evidencia
+        {
+            get
+            {
+                return evidencia;
+            }
+
+            set
+            {
+                evidencia = value;
             }
         }
     }//Normativa

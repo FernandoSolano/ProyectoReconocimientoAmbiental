@@ -1,4 +1,5 @@
 ﻿using ReconocimientoAmbientalLibrary.Data;
+using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,11 @@ namespace ReconocimientoAmbientalLibrary.Business
         public void Insertar(int idSubcriterio, String titulo, String fecha, String detalle, string nombreArchivo, string tipo, byte[] archivo)
         {
             normativaData.Insertar(idSubcriterio, titulo, fecha, detalle, nombreArchivo, tipo, archivo);
+        }
+
+        public Normativa getNormativa(int idNormativa)
+        {
+            return normativaData.getNormativa(idNormativa);
         }
     }
 }

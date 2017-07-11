@@ -26,5 +26,11 @@ namespace ReconocimientoAmbientalWeb
         {
             documentoBusiness.getAll(GridView1);
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idDocumentoSeleccionado = (int)GridView1.SelectedValue;
+            Response.Redirect("~/verDocumento.aspx?idDocumento=" + idDocumentoSeleccionado);
+        }
     }
 }

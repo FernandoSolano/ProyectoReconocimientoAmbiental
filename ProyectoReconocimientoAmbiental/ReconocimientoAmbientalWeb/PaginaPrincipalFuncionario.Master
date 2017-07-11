@@ -16,9 +16,13 @@
 <body>
     <form id="form1" runat="server">
     <div style="width: 208px; height: 130px; position: relative; top: 161px; left: 3px;">
-        <asp:Menu ID="MenuEvidencia" runat="server" StaticSubMenuIndent="16px" ForeColor="#0033CC">
+        <asp:Menu ID="MenuEvidencia" runat="server" StaticSubMenuIndent="10px" ForeColor="#666666" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em">
+            <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <DynamicMenuStyle BackColor="#E3EAEB" />
+            <DynamicSelectedStyle BackColor="#1C5E55" />
             <Items>
-                <asp:MenuItem Text="Evidencias" Value="Evidencias">
+                <asp:MenuItem Text="Evidencias" Value="Evidencias" NavigateUrl="~/nuevaEvidenciaMenu.aspx">
                     <asp:MenuItem Text="Visualizar evidencias" Value="Visualizar evidencias"></asp:MenuItem>
                     <asp:MenuItem Text="Ingresar una evidencia" Value="Ingresar una evidencia" NavigateUrl="~/nuevaEvidenciaMenu.aspx"></asp:MenuItem>
                     <asp:MenuItem Text="Registrar evidencia para subcriterio" Value="Descargar reporte por área"></asp:MenuItem>
@@ -26,26 +30,43 @@
                     <asp:MenuItem Text="Ver evidencias por subcriterio" Value="Ver evidencias por subcriterio"></asp:MenuItem>
                 </asp:MenuItem>
             </Items>
+            <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+            <StaticSelectedStyle BackColor="#1C5E55" />
         </asp:Menu>
         <br />
         <div style="width: 93px; position: relative; left: 4px; bottom: -84px;">
-            <asp:Menu ID="MenuAreaTematica" runat="server" ForeColor="#0033CC">
+            <asp:Menu ID="MenuAreaTematica" runat="server" ForeColor="#666666" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
                 <Items>
-                    <asp:MenuItem Text="Área temática" Value="Área temática">
+                    <asp:MenuItem Text="Área temática" Value="Área temática" NavigateUrl="~/AreaTematicaView.aspx">
                         <asp:MenuItem Text="Visualizar criterios y subcriterios del área" Value="Visualizar criterios y subcriterios"  NavigateUrl="~/VisualizarInformacionCriterios.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Generar reporte de área temática" Value="Generar reporte de área temática"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>
+                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#1C5E55" />
             </asp:Menu>
         </div>
         <br />
         <div style="width: 118px; left: 5px; position: relative; bottom: -112px; height: 38px;">
-            <asp:Menu ID="MenuCriterio" runat="server" ForeColor="#0033CC">
+            <asp:Menu ID="MenuCriterio" runat="server" ForeColor="#666666" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
                 <Items>
-                    <asp:MenuItem Text="Criterios" Value="Criterios">
+                    <asp:MenuItem Text="Criterios" Value="Criterios" NavigateUrl="~/CriterioView.aspx">
                         <asp:MenuItem Text="Ver informacion de criterios" Value="Ver informacion de criterios" NavigateUrl="~/GuiaAmbientalView.aspx"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>
+                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#1C5E55" />
             </asp:Menu>
         </div>
         <br />
@@ -68,12 +89,19 @@
         <div style="background-image: url('/Imagenes/ucr.jpg'); position: relative; top: -586px; left: -2px; width: 345px; height: 137px;">
         </div>
         <div style="position: relative; top: -297px; left: 10px; width: 99px;">
-            <asp:Menu ID="MenuSubcriterio" runat="server" ForeColor="Blue">
+            <asp:Menu ID="MenuSubcriterio" runat="server" ForeColor="#666666" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#E3EAEB" />
+                <DynamicSelectedStyle BackColor="#1C5E55" />
                 <Items>
-                    <asp:MenuItem Text="Subcriterios" Value="Subcriterios">
+                    <asp:MenuItem Text="Subcriterios" Value="Subcriterios" NavigateUrl="~/SubcriterioView.aspx">
                         <asp:MenuItem Text="Ver información de los subcriterios" Value="Ver información de los subcriterios"></asp:MenuItem>
                     </asp:MenuItem>
                 </Items>
+                <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#1C5E55" />
             </asp:Menu>
         </div>
     </form>

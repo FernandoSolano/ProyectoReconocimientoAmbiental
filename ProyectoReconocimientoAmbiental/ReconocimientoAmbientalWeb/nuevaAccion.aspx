@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipal.Master" AutoEventWireup="true" CodeBehind="nuevaAccion.aspx.cs" Inherits="ReconocimientoAmbientalWeb.nuevaAccion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipalFuncionario.Master" AutoEventWireup="true" CodeBehind="nuevaAccion.aspx.cs" Inherits="ReconocimientoAmbientalWeb.nuevaAccion" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
         #TextArea1 {

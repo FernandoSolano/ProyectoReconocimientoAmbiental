@@ -12,7 +12,6 @@ namespace ReconocimientoAmbientalWeb
 {
     public partial class verAcciones : System.Web.UI.Page
     {
-
         private AccionBusiness accionBusiness;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -32,9 +31,8 @@ namespace ReconocimientoAmbientalWeb
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Accion accionSeleccionada = (Accion)GridView1.SelectedValue;
-            //Producto productoSeleccionado = (Producto)GridView1.SelectedValue;
-            //Response.Redirect("~/verAccion.apsx?idAccion=" + productoSeleccionado.CodProducto);
+            int idAccionSeleccionado = (int)GridView1.SelectedValue;
+            Response.Redirect("~/verAccion.aspx?idAccion=" + idAccionSeleccionado);
         }
     }
 }

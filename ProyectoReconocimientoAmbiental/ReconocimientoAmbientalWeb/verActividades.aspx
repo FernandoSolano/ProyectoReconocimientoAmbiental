@@ -1,17 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipalFuncionario.Master" AutoEventWireup="true" CodeBehind="verNormativas.aspx.cs" Inherits="ReconocimientoAmbientalWeb.verNormativas" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipalFuncionario.Master" AutoEventWireup="true" CodeBehind="verActividades.aspx.cs" Inherits="ReconocimientoAmbientalWeb.verActividades" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" runat="server">
-    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/NuevaNormativa.aspx">Nueva normativa</asp:HyperLink>
+    <p>
+    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/NuevaActividad.aspx">Nueva actividad</asp:HyperLink>
     <br />
-    <br />
-    <asp:Label ID="Label2" runat="server" Text="Normativas existentes"></asp:Label>
-    <br />
-    <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" DataKeyNames="ID normativa">
+</p>
+<p>
+    Actividades existentes</p>
+<p>
+    <asp:GridView ID="GridView1" runat="server" CellPadding="4" DataKeyNames="ID Actividad" ForeColor="#333333" GridLines="None">
         <AlternatingRowStyle BackColor="White" />
-        <Columns>
-            <asp:CommandField SelectText="Ver" ShowSelectButton="True" />
-        </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -23,5 +22,5 @@
         <SortedDescendingCellStyle BackColor="#E9EBEF" />
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
-    <br />
+</p>
 </asp:Content>

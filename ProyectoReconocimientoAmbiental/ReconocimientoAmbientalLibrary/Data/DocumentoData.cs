@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReconocimientoAmbientalLibrary.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -54,6 +55,31 @@ namespace ReconocimientoAmbientalLibrary.Data
             cmd.Parameters.AddWithValue("@s_tipoArchivo", tipo);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public Documento getDocumento(int idDocumento)
+        {
+            SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
+            SqlCommand cmd;
+            sqlConnection1.Open();
+            cmd = new SqlCommand("sp_buscar_documento", sqlConnection1);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@s_idDocumento", idDocumento);
+            SqlDataReader da = cmd.ExecuteReader();
+            Documento documento = new Documento();
+            while (da.Read())
+            {
+                documento.IdDocumento = Int32.Parse(da["idDocumento"].ToString());
+                documento.TipoDocumento = da["tipoDocumento"].ToString();
+                documento.DetalleDocumento = da["detalleDocumento"].ToString();
+                documento.FuenteEmisor = da["fuenteEmisor"].ToString();
+                documento.FechaEmision = (DateTime) da["fechaEmision"];
+                documento.DocumentoFile = (byte[]) da["documentoFile"];
+                documento.TypeFile = da["fileType"].ToString();
+                documento.NombreArchivo = da["nombreArchivo"].ToString();
+            }
+            sqlConnection1.Close();
+            return documento;
         }
 
     }

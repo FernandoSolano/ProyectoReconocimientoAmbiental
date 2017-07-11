@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Business\AccionBusiness.cs" />
+    <Compile Include="Business\ActividadBusiness.cs" />
     <Compile Include="Business\AreaTematicaBusiness.cs" />
     <Compile Include="Business\CriterioBusiness.cs" />
     <Compile Include="Business\DocumentoBusiness.cs" />
@@ -52,6 +53,7 @@
     <Compile Include="Business\RecintoBusiness.cs" />
     <Compile Include="Business\SubcriterioBusiness.cs" />
     <Compile Include="Data\AccionData.cs" />
+    <Compile Include="Data\ActividadData.cs" />
     <Compile Include="Data\AreaTematicaData.cs" />
     <Compile Include="Data\CriterioData.cs" />
     <Compile Include="Data\DocumentoData.cs" />
