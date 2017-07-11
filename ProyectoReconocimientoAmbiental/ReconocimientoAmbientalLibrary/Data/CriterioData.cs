@@ -62,6 +62,7 @@ namespace ReconocimientoAmbientalLibrary.Data
                 Criterio criterio = new Criterio();
                 criterio.NombreCriterio = drCriterios["nombreCriterio"].ToString();
                 criterio.IdCriterio =Int32.Parse (drCriterios["idCriterio"].ToString());
+                criterio.DescripcionCriterio = drCriterios["descripcionCriterio"].ToString();
 
                 criterios.AddLast(criterio);
             }//while
@@ -107,6 +108,42 @@ namespace ReconocimientoAmbientalLibrary.Data
             }
         }
 
+        public LinkedList<Criterio> obtenerCriterioPorId(int id)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerCriterios = "get_criterio_por_id";
+            SqlCommand comandoObtenerCriterios = new SqlCommand(sqlProcedureObtenerCriterios, connection);
+            comandoObtenerCriterios.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtenerCriterios.Parameters.Add(new SqlParameter("@idCriterio", id));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drCriterio = comandoObtenerCriterios.ExecuteReader();
+                LinkedList<Criterio> criterios = new LinkedList<Criterio>();
+                while (drCriterio.Read())
+                {
+
+                    Criterio criterio = new Criterio();
+
+                    criterio.IdCriterio = Int32.Parse(drCriterio["idCriterio"].ToString());
+                    criterio.NombreCriterio = drCriterio["nombreCriterio"].ToString();
+                    criterio.DescripcionCriterio = drCriterio["descripcionCriterio"].ToString();
+
+                    criterios.AddLast(criterio);
+                }//while
+                connection.Close();
+                return criterios;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }//CriterioData
 
 }//namespace

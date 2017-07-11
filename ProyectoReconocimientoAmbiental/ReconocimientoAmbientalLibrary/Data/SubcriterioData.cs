@@ -17,7 +17,7 @@ namespace ReconocimientoAmbientalLibrary.Data
             this.cadenaConexion = cadenaConexion;
         }//constructor
 
-        public void AgregarSubcriterio(String nombreSubcriterio, String responsableSubcriterio, String planSubcriterio, int idCriterio)
+        public void AgregarSubcriterio(String nombreSubcriterio, String descripcionSubcriterio, int idCriterio)
         {
             SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
             sqlConnection1.Open();
@@ -30,8 +30,7 @@ namespace ReconocimientoAmbientalLibrary.Data
 
                 //***aqui va el parametro que quiero enviarle al procedimiento
                 cmd.Parameters.AddWithValue("@nombreSubcriterio", nombreSubcriterio);
-                cmd.Parameters.AddWithValue("@responsableSubcriterio", responsableSubcriterio);
-                cmd.Parameters.AddWithValue("@planSubcriterio", planSubcriterio);
+                cmd.Parameters.AddWithValue("@descripcionSubcriterio", descripcionSubcriterio);
                 cmd.Parameters.AddWithValue("@idCriterio", idCriterio);
 
 
@@ -91,6 +90,43 @@ namespace ReconocimientoAmbientalLibrary.Data
                     subcriterio.IdSubcriterio = Int32.Parse(drSucriterio["idSubcriterio"].ToString());
                     subcriterio.NombreSubcriterio = drSucriterio["nombreSubcriterio"].ToString();
                     subcriterio.DescripcionSubcriterio = drSucriterio["descripcionSubcriterio"].ToString();
+
+                    subcriterios.AddLast(subcriterio);
+                }//while
+                connection.Close();
+                return subcriterios;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public LinkedList<Subcriterio> obtenerSubcriterioPorId(int id)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtenerCriterios = "get_subcriterio_por_id";
+            SqlCommand comandoObtenerCriterios = new SqlCommand(sqlProcedureObtenerCriterios, connection);
+            comandoObtenerCriterios.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtenerCriterios.Parameters.Add(new SqlParameter("@idSubcriterio", id));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drCriterio = comandoObtenerCriterios.ExecuteReader();
+                LinkedList<Subcriterio> subcriterios = new LinkedList<Subcriterio>();
+                while (drCriterio.Read())
+                {
+
+                    Subcriterio subcriterio = new Subcriterio();
+
+                    subcriterio.IdSubcriterio = Int32.Parse(drCriterio["idSubcriterio"].ToString());
+                    subcriterio.NombreSubcriterio = drCriterio["nombreSubcriterio"].ToString();
+                    subcriterio.DescripcionSubcriterio = drCriterio["descripcionSubcriterio"].ToString();
 
                     subcriterios.AddLast(subcriterio);
                 }//while

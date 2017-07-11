@@ -49,6 +49,15 @@ namespace ReconocimientoAmbientalWeb {
         protected global::System.Web.UI.WebControls.TextBox tbContrasenia;
         
         /// <summary>
+        /// LBmensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBmensaje;
+        
+        /// <summary>
         /// btnAceptar control.
         /// </summary>
         /// <remarks>
