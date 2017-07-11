@@ -10,61 +10,69 @@
 namespace ReconocimientoAmbientalWeb {
     
     
-    public partial class ReporteGuia {
+    public partial class BuscarEvidencias {
         
         /// <summary>
-        /// ScriptManager1 control.
+        /// lblAreaActual control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.WebControls.Label lblAreaActual;
         
         /// <summary>
-        /// Label1 control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// ddlGuias control.
+        /// ddlCriterio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlGuias;
+        protected global::System.Web.UI.WebControls.DropDownList ddlCriterio;
         
         /// <summary>
-        /// btnGenerarReporte control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenerarReporte;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// ReportViewer1 control.
+        /// ddlSubcriterio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Microsoft.Reporting.WebForms.ReportViewer ReportViewer1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubcriterio;
         
         /// <summary>
-        /// ObjectDataSource1 control.
+        /// btnBuscar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }

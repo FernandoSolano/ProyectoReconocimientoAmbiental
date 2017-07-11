@@ -2,6 +2,7 @@
 using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,10 @@ namespace ReconocimientoAmbientalLibrary.Business
         public LinkedList<Guia> obtenerGuisAmbiental(int idGuia)
         {
             return this.guiaData.ObtenerGuiaAmbiental(idGuia);
+        }
+
+        public DataTable getReporte(int idGuia) {
+            return this.guiaData.getReporte(idGuia);
         }
 
     }//GuiaBusiness

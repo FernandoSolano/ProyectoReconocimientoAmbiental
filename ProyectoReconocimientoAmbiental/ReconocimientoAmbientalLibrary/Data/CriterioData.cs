@@ -144,6 +144,46 @@ namespace ReconocimientoAmbientalLibrary.Data
                 connection.Close();
             }
         }
+
+
+        public LinkedList<Evidencia> obtenerEvidencias(int idCriterio, int idSubcriterio)
+        {
+            SqlConnection connection = new SqlConnection(this.cadenaConexion);
+            string sqlProcedureObtener = "sp_obtener_evidencia_por_criterio_subcriterio";
+            SqlCommand comandoObtener = new SqlCommand(sqlProcedureObtener, connection);
+            comandoObtener.CommandType = System.Data.CommandType.StoredProcedure;
+            comandoObtener.Parameters.Add(new SqlParameter("@idCriterio", idCriterio));
+            comandoObtener.Parameters.Add(new SqlParameter("@idSubcriterio", idSubcriterio));
+
+            try
+            {
+                connection.Open();
+                SqlDataReader drReader = comandoObtener.ExecuteReader();
+                LinkedList<Evidencia> evidencias = new LinkedList<Evidencia>();
+                while (drReader.Read())
+                {
+
+                    Evidencia evidencia = new Evidencia();
+
+                    evidencia.IdEvidencia = Int32.Parse(drReader["idEvidencia"].ToString());
+                    evidencia.TituloEvidencia = drReader["tituloEvidencia"].ToString();
+                    evidencia.FechaEvidencia = DateTime.Parse(drReader["fechaEvidencia"].ToString());
+                    
+                    evidencias.AddLast(evidencia);
+                }//while
+                connection.Close();
+                return evidencias;
+            }
+            catch (SqlException exc)
+            {
+                throw exc;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
     }//CriterioData
 
 }//namespace
