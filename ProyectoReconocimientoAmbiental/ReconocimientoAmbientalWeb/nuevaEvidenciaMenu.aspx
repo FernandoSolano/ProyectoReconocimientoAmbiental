@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipal.Master" AutoEventWireup="true" CodeBehind="nuevaEvidenciaMenu.aspx.cs" Inherits="ReconocimientoAmbientalWeb.nuevaEvidenciaMenu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaPrincipalFuncionario.Master" AutoEventWireup="true" CodeBehind="nuevaEvidenciaMenu.aspx.cs" Inherits="ReconocimientoAmbientalWeb.nuevaEvidenciaMenu" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderBody" runat="server">

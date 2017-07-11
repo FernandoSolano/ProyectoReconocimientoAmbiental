@@ -26,5 +26,11 @@ namespace ReconocimientoAmbientalWeb
         {
             normativaBusiness.getAll(GridView1);
         }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idAccionSeleccionado = (int)GridView1.SelectedValue;
+            Response.Redirect("~/verAccion.aspx?idAccion=" + idAccionSeleccionado);
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace ReconocimientoAmbientalLibrary.Data
             cmd.ExecuteNonQuery();
             sqlConnection1.Close();
         }
+
         public LinkedList<Subcriterio> ObtenerSubcriterios()
         {
             SqlConnection connection = new SqlConnection(cadenaConexion);
@@ -69,6 +70,28 @@ namespace ReconocimientoAmbientalLibrary.Data
             cmd.Parameters.AddWithValue("@s_tipoArchivo", tipo);
 
             cmd.ExecuteNonQuery();
+        }
+
+        public Accion getAccion(int idAccion)
+        {
+            SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
+            SqlCommand cmd;
+            sqlConnection1.Open();
+            cmd = new SqlCommand("sp_buscar_accion", sqlConnection1);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@s_idAccion", idAccion);
+            SqlDataReader da = cmd.ExecuteReader();
+            Accion accion = new Accion();
+            while (da.Read())
+            {
+                accion.IdAccion = Int32.Parse(da["idAccion"].ToString());
+                accion.DetalleAccion = da["detalleAccion"].ToString();
+                accion.InformeTecnico = (byte[])da["informeTecnico_file"];
+                accion.TipoArchivo = da["file_type"].ToString();
+                accion.NombreArchivo = da["nombreArchivo"].ToString();
+            }
+            sqlConnection1.Close();
+            return accion;
         }
     }
 }

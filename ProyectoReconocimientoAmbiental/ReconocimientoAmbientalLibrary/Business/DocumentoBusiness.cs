@@ -1,4 +1,5 @@
 ﻿using ReconocimientoAmbientalLibrary.Data;
+using ReconocimientoAmbientalLibrary.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace ReconocimientoAmbientalLibrary.Business
                         String fechaEmision, String emisor, string nombreArchivo, string tipo, byte[] archivo)
         {
             documentoData.Insertar(subcriterio, titulo, fechaRealizacion, tipoEscrito, detalle, fechaEmision, emisor, nombreArchivo, tipo, archivo);
+        }
+
+        public Documento getDocumento(int idDocumento)
+        {
+            return documentoData.getDocumento(idDocumento);
         }
     }
 }

@@ -203,6 +203,7 @@
     <Content Include="Account\Web.config" />
     <Content Include="GuiaAmbientalView.aspx" />
     <Content Include="nuevaAccion.aspx" />
+    <Content Include="NuevaActividad.aspx" />
     <Content Include="nuevaEvidenciaMenu.aspx" />
     <Content Include="NuevaNormativa.aspx" />
     <Content Include="NuevoDocumento.aspx" />
@@ -245,8 +246,12 @@
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="SubcriterioView.aspx" />
+    <Content Include="verAccion.aspx" />
     <Content Include="verAcciones.aspx" />
+    <Content Include="verActividades.aspx" />
+    <Content Include="verDocumento.aspx" />
     <Content Include="VerDocumentos.aspx" />
+    <Content Include="verNormativa.aspx" />
     <Content Include="verNormativas.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="VisualizarIinformacionSubcriterios.aspx" />
@@ -457,6 +462,13 @@
     <Compile Include="nuevaAccion.aspx.designer.cs">
       <DependentUpon>nuevaAccion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NuevaActividad.aspx.cs">
+      <DependentUpon>NuevaActividad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NuevaActividad.aspx.designer.cs">
+      <DependentUpon>NuevaActividad.aspx</DependentUpon>
+    </Compile>
     <Compile Include="nuevaEvidenciaMenu.aspx.cs">
       <DependentUpon>nuevaEvidenciaMenu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -529,6 +541,13 @@
     <Compile Include="SubcriterioView.aspx.designer.cs">
       <DependentUpon>SubcriterioView.aspx</DependentUpon>
     </Compile>
+    <Compile Include="verAccion.aspx.cs">
+      <DependentUpon>verAccion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verAccion.aspx.designer.cs">
+      <DependentUpon>verAccion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="verAcciones.aspx.cs">
       <DependentUpon>verAcciones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -536,12 +555,33 @@
     <Compile Include="verAcciones.aspx.designer.cs">
       <DependentUpon>verAcciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="verActividades.aspx.cs">
+      <DependentUpon>verActividades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verActividades.aspx.designer.cs">
+      <DependentUpon>verActividades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verDocumento.aspx.cs">
+      <DependentUpon>verDocumento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verDocumento.aspx.designer.cs">
+      <DependentUpon>verDocumento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerDocumentos.aspx.cs">
       <DependentUpon>VerDocumentos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerDocumentos.aspx.designer.cs">
       <DependentUpon>VerDocumentos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="verNormativa.aspx.cs">
+      <DependentUpon>verNormativa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="verNormativa.aspx.designer.cs">
+      <DependentUpon>verNormativa.aspx</DependentUpon>
     </Compile>
     <Compile Include="verNormativas.aspx.cs">
       <DependentUpon>verNormativas.aspx</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ReconocimientoAmbientalLibrary.Domain;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -52,5 +53,26 @@ namespace ReconocimientoAmbientalLibrary.Data
             cmd.ExecuteNonQuery();
         }
 
+        public Normativa getNormativa(int idNormativa)
+        {
+            SqlConnection sqlConnection1 = new SqlConnection(cadenaConexion);
+            SqlCommand cmd;
+            sqlConnection1.Open();
+            cmd = new SqlCommand("sp_buscar_normativa", sqlConnection1);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@s_idNormativa", idNormativa);
+            SqlDataReader da = cmd.ExecuteReader();
+            Normativa normativa = new Normativa();
+            while (da.Read())
+            {
+                normativa.IdEvidencia = Int32.Parse(da["idNormativa"].ToString());
+                normativa.DetalleNormativa = da["detalleNormativa"].ToString();
+                normativa.NormativaArchivo = (byte[])da["normativa_archivo"];
+                normativa.TipoArchivo = da["tipo_archivo"].ToString();
+                normativa.NombreArchivo = da["nombre_archivo"].ToString();
+            }
+            sqlConnection1.Close();
+            return normativa;
+        }
     }
 }

@@ -10,13 +10,15 @@ namespace ReconocimientoAmbientalLibrary.Domain
     {
         private int idAccion;
         private String detalleAccion;
-        private String urlInformeTecnico;
+        private byte[] informeTecnico;
+        private String tipoArchivo;
+        private String nombreArchivo;
+        private Evidencia evidencia;
 
         public Accion()
         {
 
-        }//constructor
-
+        }
         public int IdAccion
         {
             get
@@ -43,16 +45,55 @@ namespace ReconocimientoAmbientalLibrary.Domain
             }
         }
 
-        public string UrlInformeTecnico
+        public byte[] InformeTecnico
         {
             get
             {
-                return urlInformeTecnico;
+                return informeTecnico;
             }
 
             set
             {
-                urlInformeTecnico = value;
+                informeTecnico = value;
+            }
+        }
+
+        public string TipoArchivo
+        {
+            get
+            {
+                return tipoArchivo;
+            }
+
+            set
+            {
+                tipoArchivo = value;
+            }
+        }
+
+        public string NombreArchivo
+        {
+            get
+            {
+                return nombreArchivo;
+            }
+
+            set
+            {
+                nombreArchivo = value;
+            }
+        }
+
+        public Evidencia Evidencia
+        {
+            get
+            {
+                return evidencia;
+            }
+
+            set
+            {
+                evidencia = value;
             }
         }
     }//Accion

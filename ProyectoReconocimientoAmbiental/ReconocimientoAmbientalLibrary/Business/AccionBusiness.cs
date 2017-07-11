@@ -33,5 +33,10 @@ namespace ReconocimientoAmbientalLibrary.Business
         {
             accionData.Insertar(idSubcriterio, titulo, fecha, descripcion, nombreArchivo, tipo, archivo);
         }
+
+        public Accion getAccion(int idAccion)
+        {
+            return accionData.getAccion(idAccion);
+        }
     }
 }
