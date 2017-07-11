@@ -12,7 +12,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Label ID="Label2" runat="server" Text="Criterio"></asp:Label>
 &nbsp;
-    <asp:DropDownList ID="ddlCriterio" runat="server" AutoPostBack="True" Height="26px" Width="141px">
+    <asp:DropDownList ID="ddlCriterio" runat="server" AutoPostBack="True" Height="26px" Width="141px" OnLoad="ddlCriterio_Load" OnSelectedIndexChanged="ddlCriterio_SelectedIndexChanged">
     </asp:DropDownList>
 &nbsp;
     <asp:Label ID="Label3" runat="server" Text="SubCriterio"></asp:Label>
@@ -22,7 +22,7 @@
     <br />
     <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" />
+    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
     <br />
     <br />
 &nbsp;
