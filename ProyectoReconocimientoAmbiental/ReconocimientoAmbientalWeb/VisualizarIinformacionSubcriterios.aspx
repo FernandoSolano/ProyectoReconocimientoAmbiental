@@ -9,6 +9,12 @@
     <p id="GVSub">
         <asp:GridView ID="GVSub" runat="server" AutoGenerateColumns="False" style="margin-left: 0px; margin-right: 17px" Width="684px">
             <Columns>
+                 <asp:TemplateField ItemStyle-HorizontalAlign="Center">
+                    <ItemTemplate>
+                        <asp:LinkButton HeaderText="Ver info" ID="lnkDownload3" runat="server" Text="Ver" OnClick="irASubcriterio" 
+                            CommandArgument='<%# Eval("idSubcriterio") %>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="idSubcriterio" HeaderText="ID" SortExpression="idSubcriterio" />
                 <asp:BoundField DataField="nombreSubcriterio" HeaderText="Nombre" SortExpression="nombreSubcriterio" />
                 <asp:BoundField DataField="descripcionSubcriterio" HeaderText="Descripcion" SortExpression="descripcionSubcriterio" />
