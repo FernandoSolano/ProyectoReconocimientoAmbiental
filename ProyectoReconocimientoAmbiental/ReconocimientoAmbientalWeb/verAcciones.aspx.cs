@@ -26,7 +26,8 @@ namespace ReconocimientoAmbientalWeb
 
         public void cargarArchivos()
         {
-            accionBusiness.getAll(GridView1);
+
+            accionBusiness.getAll(GridView1, Convert.ToString(Session["usuarioFuncionario"]));
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
