@@ -25,7 +25,7 @@ namespace ReconocimientoAmbientalLibrary.Business
             return this.guiaData.ObtenerGuiasAmbientales();
         }
 
-        public Guia obtenerGuisAmbiental(int idGuia)
+        public LinkedList<Guia> obtenerGuisAmbiental(int idGuia)
         {
             return this.guiaData.ObtenerGuiaAmbiental(idGuia);
         }

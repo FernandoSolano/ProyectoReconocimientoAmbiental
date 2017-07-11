@@ -87,28 +87,32 @@ namespace ReconocimientoAmbientalLibrary.Data
 
         }
 
-        public Guia ObtenerGuiaAmbiental(int idGuia)
+        public LinkedList<Guia> ObtenerGuiaAmbiental(int idGuia)
         {
             
             SqlConnection connection = new SqlConnection(this.cadenaConexion);
             string sqlProcedureObtenerGuia = "obtener_guia_por_id";
             SqlCommand comandoObtenerGuia = new SqlCommand(sqlProcedureObtenerGuia, connection);
             comandoObtenerGuia.CommandType = System.Data.CommandType.StoredProcedure;
-
+            comandoObtenerGuia.Parameters.Add(new SqlParameter("@idGuia", idGuia));
+            LinkedList<Guia> guias = new LinkedList<Guia>();
             try
             {
                 connection.Open();
                 SqlDataReader dataReader = comandoObtenerGuia.ExecuteReader();
                 Guia guia = new Guia();
 
-                guia.IdGuia = Int32.Parse(dataReader["idGuia"].ToString());
-                guia.AnnoPublicacion = Int32.Parse(dataReader["annoPublicacion"].ToString());
-                guia.Vigente = bool.Parse(dataReader["vigente"].ToString());
-                guia.NombreGuia = dataReader["nombreGuia"].ToString();
-                guia.FechaCreacion = DateTime.Parse(dataReader["fechaCreacion"].ToString());
-                
+                while (dataReader.Read()) {
+                    guia.IdGuia = Int32.Parse(dataReader["idGuia"].ToString());
+                    guia.AnnoPublicacion = Int32.Parse(dataReader["annoPublicacion"].ToString());
+                    guia.Vigente = bool.Parse(dataReader["vigente"].ToString());
+                    guia.NombreGuia = dataReader["nombreGuia"].ToString();
+                    guia.FechaCreacion = DateTime.Parse(dataReader["fechaCreacion"].ToString());
+
+                    guias.AddLast(guia);
+                }
                 connection.Close();
-                return guia;
+                return guias;
             }
             catch (SqlException exc)
             {
